@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alex Morgan — Software Developer</title>
+<meta name="description" content="Portfolio of Alex Morgan, software developer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<!-- Gutter: persistent line-number rail, the signature element -->
+<div class="gutter" aria-hidden="true"></div>
+
+<!-- Editor tab bar acting as primary navigation -->
+<header class="tabbar" id="tabbar">
+  <div class="tabbar__brand">
+    <span class="dot dot--red"></span><span class="dot dot--yellow"></span><span class="dot dot--green"></span>
+    <span class="brand-name">alex-morgan.dev</span>
+  </div>
+  <nav class="tabs" id="tabs">
+    <a href="#home" class="tab active" data-tab="home"><span class="tab__name">index.html</span></a>
+    <a href="#about" class="tab" data-tab="about"><span class="tab__name">about.js</span></a>
+    <a href="#skills" class="tab" data-tab="skills"><span class="tab__name">skills.json</span></a>
+    <a href="#certificates" class="tab" data-tab="certificates"><span class="tab__name">certs.md</span></a>
+    <a href="#projects" class="tab" data-tab="projects"><span class="tab__name">projects/</span></a>
+    <a href="#resume" class="tab" data-tab="resume"><span class="tab__name">resume.pdf</span></a>
+    <a href="#contact" class="tab" data-tab="contact"><span class="tab__name">contact.sh</span></a>
+  </nav>
+  <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="#home" data-tab="home">index.html</a>
+  <a href="#about" data-tab="about">about.js</a>
+  <a href="#skills" data-tab="skills">skills.json</a>
+  <a href="#certificates" data-tab="certificates">certs.md</a>
+  <a href="#projects" data-tab="projects">projects/</a>
+  <a href="#resume" data-tab="resume">resume.pdf</a>
+  <a href="#contact" data-tab="contact">contact.sh</a>
+</div>
+
+<main>
+
+  <!-- ================= HERO / LANDING ================= -->
+  <section id="home" class="section hero">
+    <div class="editor-frame">
+      <div class="editor-frame__head">
+        <span class="lang-badge">JavaScript</span>
+        <span class="editor-frame__path">~/portfolio/index.html</span>
+      </div>
+      <div class="editor-frame__body">
+        <p class="code-line"><span class="c-comment">// welcome to my portfolio</span></p>
+        <p class="code-line"><span class="c-key">const</span> <span class="c-var">developer</span> <span class="c-op">=</span> <span class="c-brace">{</span></p>
+        <p class="code-line code-line--indent"><span class="c-prop">name</span><span class="c-op">:</span> <span class="c-string">"Alex Morgan"</span><span class="c-op">,</span></p>
+        <p class="code-line code-line--indent"><span class="c-prop">role</span><span class="c-op">:</span> <span class="c-string" id="typedRole"></span><span class="type-cursor">|</span><span class="c-op">,</span></p>
+        <p class="code-line code-line--indent"><span class="c-prop">basedIn</span><span class="c-op">:</span> <span class="c-string">"Coimbatore, India"</span><span class="c-op">,</span></p>
+        <p class="code-line code-line--indent"><span class="c-prop">focus</span><span class="c-op">:</span> <span class="c-brace">[</span><span class="c-string">"clean APIs"</span><span class="c-op">,</span> <span class="c-string">"fast UIs"</span><span class="c-op">,</span> <span class="c-string">"readable code"</span><span class="c-brace">]</span><span class="c-op">,</span></p>
+        <p class="code-line code-line--indent"><span class="c-prop">available</span><span class="c-op">:</span> <span class="c-key">true</span></p>
+        <p class="code-line"><span class="c-brace">}</span><span class="c-op">;</span></p>
+      </div>
+    </div>
+
+    <div class="hero__side">
+      <h1 class="hero__title">Building things<br>that <span class="highlight">run in production</span>,<br>not just in demos.</h1>
+      <p class="hero__lede">I'm a software developer who ships full-stack features end to end — from the database schema to the pixel on screen. Replace this line with your own one-line pitch.</p>
+      <div class="hero__cta">
+        <a href="#projects" class="btn btn--primary"><span class="prompt">$</span> view --projects</a>
+        <a href="#contact" class="btn btn--ghost"><span class="prompt">$</span> contact --init</a>
+      </div>
+      <div class="hero__meta">
+        <span class="status-dot"></span> Open to new roles &amp; freelance work
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about" class="section">
+    <p class="eyebrow">// about</p>
+    <h2 class="section-title">about<span class="c-op">.</span>js</h2>
+
+    <div class="about-grid">
+      <div class="about-copy">
+        <p>Replace this paragraph with your real story: how you got into development, what kind of problems you like solving, and what you're doing now. Two to three short paragraphs read better than one long block.</p>
+        <p>Talk about your working style here — do you like pairing? Do you obsess over performance? Do you write tests first? This is the section that turns "a developer" into "the developer they want to hire."</p>
+      </div>
+
+      <div class="editor-frame about-json">
+        <div class="editor-frame__head">
+          <span class="lang-badge lang-badge--json">JSON</span>
+          <span class="editor-frame__path">~/about/profile.json</span>
+        </div>
+        <div class="editor-frame__body">
+          <p class="code-line"><span class="c-brace">{</span></p>
+          <p class="code-line code-line--indent"><span class="c-prop">"experience"</span><span class="c-op">:</span> <span class="c-string">"3+ years"</span><span class="c-op">,</span></p>
+          <p class="code-line code-line--indent"><span class="c-prop">"education"</span><span class="c-op">:</span> <span class="c-string">"B.Tech, Computer Science"</span><span class="c-op">,</span></p>
+          <p class="code-line code-line--indent"><span class="c-prop">"languages"</span><span class="c-op">:</span> <span class="c-brace">[</span><span class="c-string">"English"</span><span class="c-op">,</span> <span class="c-string">"Tamil"</span><span class="c-brace">]</span><span class="c-op">,</span></p>
+          <p class="code-line code-line--indent"><span class="c-prop">"interests"</span><span class="c-op">:</span> <span class="c-brace">[</span><span class="c-string">"open source"</span><span class="c-op">,</span> <span class="c-string">"system design"</span><span class="c-brace">]</span></p>
+          <p class="code-line"><span class="c-brace">}</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section id="skills" class="section">
+    <p class="eyebrow">// skills</p>
+    <h2 class="section-title">skills<span class="c-op">.</span>json</h2>
+
+    <div class="skills-grid">
+      <div class="skill-block">
+        <h3 class="skill-block__title"><span class="c-prop">"languages"</span></h3>
+        <ul class="skill-list">
+          <li class="skill-item"><span>JavaScript</span><span class="bar"><i style="--v:90%"></i></span></li>
+          <li class="skill-item"><span>Python</span><span class="bar"><i style="--v:80%"></i></span></li>
+          <li class="skill-item"><span>TypeScript</span><span class="bar"><i style="--v:75%"></i></span></li>
+          <li class="skill-item"><span>SQL</span><span class="bar"><i style="--v:70%"></i></span></li>
+        </ul>
+      </div>
+      <div class="skill-block">
+        <h3 class="skill-block__title"><span class="c-prop">"frameworks"</span></h3>
+        <ul class="skill-list">
+          <li class="skill-item"><span>React</span><span class="bar"><i style="--v:88%"></i></span></li>
+          <li class="skill-item"><span>Node.js</span><span class="bar"><i style="--v:82%"></i></span></li>
+          <li class="skill-item"><span>Express</span><span class="bar"><i style="--v:78%"></i></span></li>
+          <li class="skill-item"><span>Tailwind CSS</span><span class="bar"><i style="--v:85%"></i></span></li>
+        </ul>
+      </div>
+      <div class="skill-block">
+        <h3 class="skill-block__title"><span class="c-prop">"tools"</span></h3>
+        <ul class="skill-list">
+          <li class="skill-item"><span>Git &amp; GitHub</span><span class="bar"><i style="--v:90%"></i></span></li>
+          <li class="skill-item"><span>Docker</span><span class="bar"><i style="--v:65%"></i></span></li>
+          <li class="skill-item"><span>MongoDB</span><span class="bar"><i style="--v:72%"></i></span></li>
+          <li class="skill-item"><span>REST / GraphQL</span><span class="bar"><i style="--v:80%"></i></span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tag-cloud">
+      <span class="tag">Git</span><span class="tag">Linux</span><span class="tag">CI/CD</span>
+      <span class="tag">Figma</span><span class="tag">Jest</span><span class="tag">Redux</span>
+      <span class="tag">PostgreSQL</span><span class="tag">AWS</span><span class="tag">Webpack</span>
+    </div>
+  </section>
+
+  <!-- ================= CERTIFICATES ================= -->
+  <section id="certificates" class="section">
+    <p class="eyebrow">// certificates</p>
+    <h2 class="section-title">certs<span class="c-op">.</span>md</h2>
+
+    <div class="card-grid">
+
+      <article class="card cert-card">
+        <div class="cert-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 14.5 7.2 16.9l.9-5.4L4.2 7.7l5.4-.8L12 2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="card__title">Full-Stack Web Development</h3>
+        <p class="card__meta">Issuing Org &middot; 2024</p>
+        <p class="card__desc">Replace with a one-line summary of what the certificate actually covered.</p>
+        <a href="#" class="card__link">view credential →</a>
+      </article>
+
+      <article class="card cert-card">
+        <div class="cert-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 14.5 7.2 16.9l.9-5.4L4.2 7.7l5.4-.8L12 2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="card__title">Cloud Practitioner</h3>
+        <p class="card__meta">Issuing Org &middot; 2023</p>
+        <p class="card__desc">Replace with a one-line summary of what the certificate actually covered.</p>
+        <a href="#" class="card__link">view credential →</a>
+      </article>
+
+      <article class="card cert-card">
+        <div class="cert-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 14.5 7.2 16.9l.9-5.4L4.2 7.7l5.4-.8L12 2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="card__title">Data Structures &amp; Algorithms</h3>
+        <p class="card__meta">Issuing Org &middot; 2023</p>
+        <p class="card__desc">Replace with a one-line summary of what the certificate actually covered.</p>
+        <a href="#" class="card__link">view credential →</a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section id="projects" class="section">
+    <p class="eyebrow">// projects</p>
+    <h2 class="section-title">projects<span class="c-op">/</span></h2>
+
+    <div class="card-grid">
+
+      <article class="card project-card">
+        <div class="project-card__head">
+          <span class="folder-tag">01</span>
+          <div class="project-card__links">
+            <a href="#" aria-label="Live demo">↗</a>
+            <a href="#" aria-label="Source code">{ }</a>
+          </div>
+        </div>
+        <h3 class="card__title">project-one</h3>
+        <p class="card__desc">Short description of the problem this project solves and the outcome. Swap this out for a real project.</p>
+        <div class="tech-row">
+          <span class="tech">React</span><span class="tech">Node.js</span><span class="tech">MongoDB</span>
+        </div>
+      </article>
+
+      <article class="card project-card">
+        <div class="project-card__head">
+          <span class="folder-tag">02</span>
+          <div class="project-card__links">
+            <a href="#" aria-label="Live demo">↗</a>
+            <a href="#" aria-label="Source code">{ }</a>
+          </div>
+        </div>
+        <h3 class="card__title">project-two</h3>
+        <p class="card__desc">Short description of the problem this project solves and the outcome. Swap this out for a real project.</p>
+        <div class="tech-row">
+          <span class="tech">Python</span><span class="tech">Flask</span><span class="tech">PostgreSQL</span>
+        </div>
+      </article>
+
+      <article class="card project-card">
+        <div class="project-card__head">
+          <span class="folder-tag">03</span>
+          <div class="project-card__links">
+            <a href="#" aria-label="Live demo">↗</a>
+            <a href="#" aria-label="Source code">{ }</a>
+          </div>
+        </div>
+        <h3 class="card__title">project-three</h3>
+        <p class="card__desc">Short description of the problem this project solves and the outcome. Swap this out for a real project.</p>
+        <div class="tech-row">
+          <span class="tech">JavaScript</span><span class="tech">Express</span><span class="tech">Redis</span>
+        </div>
+      </article>
+
+      <article class="card project-card">
+        <div class="project-card__head">
+          <span class="folder-tag">04</span>
+          <div class="project-card__links">
+            <a href="#" aria-label="Live demo">↗</a>
+            <a href="#" aria-label="Source code">{ }</a>
+          </div>
+        </div>
+        <h3 class="card__title">project-four</h3>
+        <p class="card__desc">Short description of the problem this project solves and the outcome. Swap this out for a real project.</p>
+        <div class="tech-row">
+          <span class="tech">TypeScript</span><span class="tech">Next.js</span><span class="tech">Docker</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= RESUME ================= -->
+  <section id="resume" class="section resume-section">
+    <p class="eyebrow">// resume</p>
+    <h2 class="section-title">resume<span class="c-op">.</span>pdf</h2>
+
+    <div class="editor-frame resume-frame">
+      <div class="editor-frame__head">
+        <span class="lang-badge lang-badge--pdf">PDF</span>
+        <span class="editor-frame__path">~/resume/alex-morgan-resume.pdf</span>
+      </div>
+      <div class="editor-frame__body resume-frame__body">
+        <p class="code-line"><span class="c-comment">/**</span></p>
+        <p class="code-line"><span class="c-comment"> * A quick snapshot before you download.</span></p>
+        <p class="code-line"><span class="c-comment"> * Full detail, roles, and timeline live in the PDF.</span></p>
+        <p class="code-line"><span class="c-comment"> */</span></p>
+        <ul class="resume-summary">
+          <li><span class="c-key">experience</span> <span class="c-op">→</span> 3+ years building web applications</li>
+          <li><span class="c-key">strength</span> <span class="c-op">→</span> shipping full features, front to back</li>
+          <li><span class="c-key">currently</span> <span class="c-op">→</span> open to full-time &amp; contract roles</li>
+        </ul>
+        <a href="resume.pdf" download class="btn btn--primary resume-download">
+          <span class="prompt">$</span> download --resume
+        </a>
+        <p class="resume-note">Add your actual <code>resume.pdf</code> file next to this page for the download button to work.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" class="section contact-section">
+    <p class="eyebrow">// contact</p>
+    <h2 class="section-title">contact<span class="c-op">.</span>sh</h2>
+
+    <div class="contact-grid">
+      <div class="terminal">
+        <div class="terminal__head">
+          <span class="dot dot--red"></span><span class="dot dot--yellow"></span><span class="dot dot--green"></span>
+          <span class="terminal__path">bash — contact.sh</span>
+        </div>
+        <form class="terminal__body" id="contactForm" novalidate>
+          <p class="term-line"><span class="prompt">$</span> whoami</p>
+          <label class="term-label" for="nameInput">name</label>
+          <input class="term-input" id="nameInput" name="name" type="text" placeholder="your name" required>
+          <p class="term-error" id="nameError" role="alert"></p>
+
+          <p class="term-line"><span class="prompt">$</span> reply --to</p>
+          <label class="term-label" for="emailInput">email</label>
+          <input class="term-input" id="emailInput" name="email" type="email" placeholder="you@example.com" required>
+          <p class="term-error" id="emailError" role="alert"></p>
+
+          <p class="term-line"><span class="prompt">$</span> cat message.txt</p>
+          <label class="term-label" for="messageInput">message</label>
+          <textarea class="term-input term-textarea" id="messageInput" name="message" rows="4" placeholder="type your message here..." required></textarea>
+          <p class="term-error" id="messageError" role="alert"></p>
+
+          <button type="submit" class="btn btn--primary"><span class="prompt">$</span> send --message</button>
+          <p class="term-success" id="formSuccess" role="status">Message queued. Replace form action with a real backend (e.g. Formspree, EmailJS) to actually send it.</p>
+        </form>
+      </div>
+
+      <div class="contact-links">
+        <a href="mailto:alex.morgan@example.com" class="contact-link">
+          <span class="contact-link__label">email</span>
+          <span class="contact-link__value">alex.morgan@example.com</span>
+        </a>
+        <a href="https://github.com/" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-link__label">github</span>
+          <span class="contact-link__value">github.com/yourhandle</span>
+        </a>
+        <a href="https://linkedin.com/" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-link__label">linkedin</span>
+          <span class="contact-link__value">linkedin.com/in/yourhandle</span>
+        </a>
+        <a href="https://twitter.com/" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-link__label">twitter / x</span>
+          <span class="contact-link__value">@yourhandle</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p><span class="prompt">$</span> echo "Built with HTML, CSS &amp; JS — no frameworks." <span class="c-comment">// © <span id="year"></span> Alex Morgan</span></p>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>

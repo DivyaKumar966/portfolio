@@ -1,0 +1,637 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:#fff;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    height:80px;
+    padding:0 60px;
+
+    background:#111827;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+/* Logo */
+
+.left a{
+    text-decoration:none;
+}
+
+.left p{
+    color:#ffffff;
+    font-size:30px;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+/* Hello */
+
+.header-hello{
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    font-family:'Dancing Script',cursive;
+    font-size:40px;
+    color:#22d3ee;
+
+    pointer-events:none;
+}
+
+/* Navigation */
+
+.right{
+    display:flex;
+    gap:30px;
+}
+
+.right a{
+    text-decoration:none;
+    color:#fff;
+    font-size:14px;
+    font-weight:500;
+    transition:.3s;
+}
+
+.right a:hover{
+    color:#22d3ee;
+}
+
+
+/* ==================================
+   MAIN HOME SECTION
+================================== */
+
+.index_main {
+
+    min-height: calc(100vh - 75px);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 100px;
+
+    padding: 60px 80px;
+}
+
+
+/* ==================================
+   PROFILE DESIGN
+================================== */
+
+.profile-design {
+
+    position: relative;
+
+    width: 420px;
+    height: 450px;
+
+    flex-shrink: 0;
+}
+
+
+/* ==================================
+   BACKGROUND LAYERS
+================================== */
+
+.layer {
+
+    position: absolute;
+
+    width: 350px;
+    height: 380px;
+
+    left: 35px;
+    top: 35px;
+}
+
+
+/* Green Layer */
+
+.layer-1 {
+
+    background-color: #008c8c;
+
+    transform: rotate(5deg);
+}
+
+
+/* Grey Layer */
+
+.layer-2 {
+
+    background-color: #eeeeee;
+
+    transform: rotate(-4deg);
+}
+
+
+/* ==================================
+   PROFILE IMAGE
+================================== */
+
+.profile-image {
+
+    position: absolute;
+
+    width: 350px;
+    height: 380px;
+
+    left: 35px;
+    top: 35px;
+
+    overflow: hidden;
+
+    background-color: #dddddd;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.20);
+
+    z-index: 5;
+}
+
+
+.profile-image img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* If you want black & white image,
+   uncomment this:
+
+.profile-image img {
+    filter: grayscale(100%);
+}
+
+*/
+
+
+/* ==================================
+   IMAGE TAGS
+================================== */
+
+.tag {
+
+    position: absolute;
+
+    background-color: #22d3ee;
+
+    color: white;
+
+    padding: 9px 17px;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    letter-spacing: 0.5px;
+
+    z-index: 10;
+}
+
+
+/* Developer Tag */
+
+.tag-left {
+
+    left: -10px;
+
+    top: 105px;
+}
+
+
+/* Full Stack Tag */
+
+.tag-top {
+
+    right: 0;
+
+    top: 10px;
+}
+
+
+/* Java Tag */
+
+.tag-bottom {
+
+    right: 10px;
+
+    bottom: 10px;
+}
+
+
+/* ==================================
+   MAIN CONTENT
+================================== */
+
+.mainContent {
+
+    width: 100%;
+
+    max-width: 620px;
+}
+
+
+/* Hello */
+
+.hello {
+
+    color: #22d3ee;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    margin-bottom: 10px;
+}
+
+
+/* Name */
+
+.name {
+
+    font-size: 48px;
+
+    line-height: 1.1;
+
+    margin-bottom: 12px;
+}
+
+
+/* Role */
+
+.role {
+
+    font-size: 25px;
+
+    font-weight: 500;
+
+    color: #555555;
+
+    margin-bottom: 25px;
+}
+
+
+/* Description */
+
+.description {
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    color: #555555;
+
+    max-width: 600px;
+}
+
+
+/* ==================================
+   BUTTONS
+================================== */
+
+.buttons {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 30px;
+}
+
+
+.buttons a {
+
+    display: inline-block;
+
+    padding: 12px 24px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    border-radius: 4px;
+
+    transition: 0.3s;
+}
+
+
+/* Project Button */
+
+.project-btn {
+
+    background-color: #22d3ee;
+
+    color: white;
+
+    border: 2px solid #22d3ee;
+}
+
+
+.project-btn:hover {
+
+    background-color:#0992a7;
+
+    border-color: #0992a7;
+}
+
+
+/* Resume Button */
+
+.resume-btn {
+
+    color: #22d3ee;
+
+    border: 2px solid #22d3ee;
+}
+
+
+.resume-btn:hover {
+
+    background-color: #22d3ee;
+
+    color: white;
+}
+
+
+/* ==================================
+   TABLET
+================================== */
+
+@media (max-width: 1050px) {
+
+    .header {
+
+        padding: 0 30px;
+    }
+
+
+    .right {
+
+        gap: 15px;
+    }
+
+
+    .right a {
+
+        font-size: 11px;
+    }
+
+
+    .index_main {
+
+        gap: 40px;
+
+        padding: 50px 30px;
+    }
+
+
+    .profile-design {
+
+        width: 360px;
+        height: 390px;
+    }
+
+
+    .layer,
+    .profile-image {
+
+        width: 300px;
+        height: 330px;
+
+        left: 30px;
+        top: 30px;
+    }
+
+
+    .name {
+
+        font-size: 40px;
+    }
+
+}
+
+
+/* ==================================
+   MOBILE
+================================== */
+
+@media (max-width: 768px) {
+
+
+    @media(max-width:768px){
+
+    .header-hello{
+        display:none;
+    }
+
+}
+    /* Header */
+
+    .header {
+
+        flex-direction: column;
+
+        padding: 20px;
+
+        gap: 20px;
+    }
+
+
+    .right {
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+
+    .right a {
+
+        font-size: 11px;
+    }
+
+
+    /* Main */
+
+    .index_main {
+
+        flex-direction: column;
+
+        min-height: auto;
+
+        gap: 40px;
+
+        padding: 50px 20px;
+    }
+
+
+    /* Profile */
+
+    .profile-design {
+
+        width: 320px;
+        height: 350px;
+    }
+
+
+    .layer,
+    .profile-image {
+
+        width: 270px;
+        height: 300px;
+
+        left: 25px;
+        top: 25px;
+    }
+
+
+    .tag {
+
+        font-size: 9px;
+
+        padding: 7px 12px;
+    }
+
+
+    .tag-left {
+
+        left: -5px;
+
+        top: 85px;
+    }
+
+
+    .tag-top {
+
+        right: 0;
+
+        top: 5px;
+    }
+
+
+    .tag-bottom {
+
+        right: 5px;
+
+        bottom: 5px;
+    }
+
+
+    /* Content */
+
+    .mainContent {
+
+        text-align: center;
+    }
+
+
+    .hello {
+
+        font-size: 16px;
+    }
+
+
+    .name {
+
+        font-size: 35px;
+    }
+
+
+    .role {
+
+        font-size: 21px;
+    }
+
+
+    .description {
+
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+
+    /* Buttons */
+
+    .buttons {
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+}
+
+
+/* ==================================
+   SMALL MOBILE
+================================== */
+
+@media (max-width: 400px) {
+
+    .profile-design {
+
+        width: 280px;
+        height: 310px;
+    }
+    @media(max-width:768px){
+
+    .header-hello{
+        display:none;
+    }
+
+}
+
+
+    .layer,
+    .profile-image {
+
+        width: 235px;
+        height: 260px;
+
+        left: 22px;
+        top: 22px;
+    }
+
+
+    .name {
+
+        font-size: 30px;
+    }
+
+}
+

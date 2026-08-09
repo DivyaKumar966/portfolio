@@ -1,0 +1,596 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0f172a;
+    color:#ffffff;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.header{
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    height:80px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 70px;
+
+    background:#111827;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+/* Logo */
+
+.logo a{
+
+    text-decoration:none;
+    color:#fff;
+
+    font-size:30px;
+    font-weight:700;
+}
+
+/* Hello */
+
+.hello{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    font-family:'Dancing Script',cursive;
+
+    font-size:38px;
+
+    color:#22d3ee;
+
+    pointer-events:none;
+}
+
+/* Navbar */
+
+nav{
+
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+
+    text-decoration:none;
+    color:white;
+
+    font-size:14px;
+    font-weight:500;
+
+    transition:.3s;
+}
+
+nav a:hover,
+nav .active{
+
+    color:#22d3ee;
+}
+
+/* ===========================
+   TITLE
+=========================== */
+
+.title{
+
+    width:90%;
+
+    margin:80px auto;
+
+    text-align:center;
+}
+
+.title h1{
+
+    font-size:45px;
+
+    color:#22d3ee;
+
+    margin-bottom:20px;
+}
+
+.title p{
+
+    color:#cbd5e1;
+
+    font-size:18px;
+
+    max-width:700px;
+
+    margin:auto;
+
+    line-height:32px;
+}
+
+/* ===========================
+   PROJECT
+=========================== */
+
+.project{
+
+    width:90%;
+
+    max-width:1300px;
+
+    margin:100px auto;
+
+    display:flex;
+
+    justify-content:space-between;
+    align-items:center;
+
+    gap:70px;
+}
+
+/* Reverse Layout */
+
+.reverse{
+
+    flex-direction:row-reverse;
+}
+
+/* ===========================
+   IMAGE
+=========================== */
+
+.project-image{
+
+    flex:1;
+}
+
+.project-image img{
+
+    width:100%;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.45);
+
+    transition:.5s;
+}
+
+.project-image img:hover{
+
+    transform:scale(1.04);
+}
+
+/* ===========================
+   CONTENT
+=========================== */
+
+.project-content{
+
+    flex:1;
+}
+
+.project-content h2{
+
+    color:#22d3ee;
+
+    font-size:18px;
+
+    margin-bottom:10px;
+}
+
+.project-content h1{
+
+    font-size:40px;
+
+    margin-bottom:10px;
+}
+
+.project-content h3{
+
+    color:#94a3b8;
+
+    margin-bottom:20px;
+
+    font-weight:500;
+}
+
+.project-content p{
+
+    color:#cbd5e1;
+
+    line-height:32px;
+
+    margin-bottom:30px;
+
+    text-align:justify;
+}
+
+/* ===========================
+   TECH STACK
+=========================== */
+
+.tech{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-bottom:35px;
+}
+
+.tech span{
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    background:#1e293b;
+
+    color:#22d3ee;
+
+    border:1px solid rgba(34,211,238,.3);
+
+    font-size:14px;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.buttons{
+
+    display:flex;
+
+    gap:20px;
+}
+
+.buttons a{
+
+    text-decoration:none;
+
+    padding:12px 30px;
+
+    border-radius:6px;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.buttons a:first-child{
+
+    background:#22d3ee;
+
+    color:#0f172a;
+}
+
+.buttons a:last-child{
+
+    border:2px solid #22d3ee;
+
+    color:#22d3ee;
+}
+
+/* ===========================
+   BUTTON HOVER
+=========================== */
+
+.buttons a:first-child:hover{
+
+    background:#0ea5b7;
+
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 25px rgba(34,211,238,.35);
+}
+
+.buttons a:last-child:hover{
+
+    background:#22d3ee;
+
+    color:#0f172a;
+
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 25px rgba(34,211,238,.35);
+}
+
+/* ===========================
+   PROJECT HOVER
+=========================== */
+
+.project{
+
+    transition:.5s;
+}
+
+.project:hover{
+
+    transform:translateY(-8px);
+}
+
+/* ===========================
+   IMAGE SHADOW
+=========================== */
+
+.project-image{
+
+    overflow:hidden;
+
+    border-radius:18px;
+}
+
+.project-image img:hover{
+
+    transform:scale(1.06);
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+    margin-top:100px;
+
+    padding:30px;
+
+    text-align:center;
+
+    background:#111827;
+
+    color:#94a3b8;
+
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+/* ===========================
+   TABLET
+=========================== */
+
+@media(max-width:992px){
+
+.header{
+
+    padding:0 35px;
+}
+
+nav{
+
+    gap:18px;
+}
+
+nav a{
+
+    font-size:13px;
+}
+
+.project{
+
+    gap:40px;
+}
+
+.project-content h1{
+
+    font-size:32px;
+}
+
+.project-content p{
+
+    line-height:28px;
+}
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+.header{
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:auto;
+
+    padding:20px;
+
+    gap:20px;
+}
+
+.hello{
+
+    position:static;
+
+    transform:none;
+
+    font-size:34px;
+}
+
+nav{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:15px;
+}
+
+.title{
+
+    margin:50px auto;
+}
+
+.title h1{
+
+    font-size:34px;
+}
+
+.title p{
+
+    font-size:15px;
+
+    line-height:28px;
+}
+
+.project{
+
+    flex-direction:column;
+
+    text-align:center;
+
+    margin:70px auto;
+}
+
+.reverse{
+
+    flex-direction:column;
+}
+
+.project-image{
+
+    width:100%;
+}
+
+.project-content{
+
+    width:100%;
+}
+
+.project-content h1{
+
+    font-size:30px;
+}
+
+.project-content h3{
+
+    font-size:18px;
+}
+
+.project-content p{
+
+    text-align:center;
+
+    font-size:15px;
+
+    line-height:28px;
+}
+
+.tech{
+
+    justify-content:center;
+}
+
+.buttons{
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+}
+
+.buttons a{
+
+    width:170px;
+
+    text-align:center;
+}
+
+}
+
+/* ===========================
+   SMALL MOBILE
+=========================== */
+
+@media(max-width:480px){
+
+.logo a{
+
+    font-size:24px;
+}
+
+.hello{
+
+    font-size:28px;
+}
+
+nav a{
+
+    font-size:12px;
+}
+
+.title h1{
+
+    font-size:28px;
+}
+
+.project-content h1{
+
+    font-size:25px;
+}
+
+.project-content h2{
+
+    font-size:16px;
+}
+
+.project-content h3{
+
+    font-size:16px;
+}
+
+.tech span{
+
+    font-size:12px;
+
+    padding:7px 14px;
+}
+
+.buttons a{
+
+    width:150px;
+
+    padding:10px 20px;
+
+    font-size:14px;
+}
+
+footer{
+
+    font-size:14px;
+}
+
+}

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Certificates | DK</title>
+
+    <link rel="stylesheet" href="certificate.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">
+        <a href="index.html">DK</a>
+    </div>
+
+    <div class="hello">
+        hello
+    </div>
+
+    <nav>
+
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="skills.html">SKILLS</a>
+        <a href="projects.html">PROJECTS</a>
+        <a href="certification.html" class="active">CERTIFICATES</a>
+        <a href="contact.html">CONTACT</a>
+
+    </nav>
+
+</header>
+
+
+<section class="title">
+
+    <h1>MY CERTIFICATES</h1>
+
+    <p>
+        Certifications, Internship and Achievements
+    </p>
+
+</section>
+
+
+<section class="certificate-container">
+
+
+    <!-- Certificate 1 -->
+
+    <div class="certificate-card">
+
+        <img src="./images/JAVA CERTIFICATE.jpeg" alt="NPTEL">
+
+        <h2>NPTEL Programming in Java</h2>
+
+        <h4>NPTEL • 2026</h4>
+
+        <p>
+            Successfully completed Programming in Java course.
+        </p>
+
+        <div class="buttons">
+
+            <button class="viewBtn"
+                data-img="./images/JAVA CERTIFICATE.jpeg">
+                View
+            </button>
+
+            <a href="./images/JAVA CERTIFICATE.jpeg" download>
+                Download
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Certificate 2 -->
+
+    <div class="certificate-card">
+
+        <img src="./images/MINDUFL AI.jpeg" alt="Internship">
+
+        <h2>Internship Certificate</h2>
+
+        <h4>Training Internship</h4>
+
+        <p>
+            Successfully completed Full Stack Internship.
+        </p>
+
+        <div class="buttons">
+
+            <button class="viewBtn"
+                data-img="./images/MINDUFL AI.jpeg">
+                View
+            </button>
+
+            <a href="./images/MINDUFL AI.jpeg" download>
+                Download
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Certificate 3 -->
+
+    <div class="certificate-card">
+
+        <img src="./images/workshop.jpg" alt="Workshop">
+
+        <h2>Workshop Certificate</h2>
+
+        <h4>Technical Workshop</h4>
+
+        <p>
+            Participated in Web Development Workshop.
+        </p>
+
+        <div class="buttons">
+
+            <button class="viewBtn"
+                data-img="./images/workshop.jpg">
+                View
+            </button>
+
+            <a href="./images/workshop.jpg" download>
+                Download
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Certificate 4 -->
+
+    <div class="certificate-card">
+
+        <img src="./images/achievement.jpg" alt="Achievement">
+
+        <h2>Achievement</h2>
+
+        <h4>Technical Event</h4>
+
+        <p>
+            Participation in Technical Events.
+        </p>
+
+        <div class="buttons">
+
+            <button class="viewBtn"
+                data-img="./images/achievement.jpg">
+                View
+            </button>
+
+            <a href="./images/achievement.jpg" download>
+                Download
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Popup -->
+
+<div id="popup">
+
+    <span id="closeBtn">&times;</span>
+
+    <img id="popupImage" src="" alt="Certificate">
+
+</div>
+
+
+<footer>
+
+    © 2026 DK Portfolio
+
+</footer>
+
+
+<script>
+
+const popup = document.getElementById("popup");
+const popupImage = document.getElementById("popupImage");
+const closeBtn = document.getElementById("closeBtn");
+
+const buttons = document.querySelectorAll(".viewBtn");
+
+buttons.forEach(button => {
+
+    button.addEventListener("click", function(){
+
+        const image = this.getAttribute("data-img");
+
+        popupImage.src = image;
+
+        popup.style.display = "flex";
+
+    });
+
+});
+
+closeBtn.addEventListener("click", function(){
+
+    popup.style.display = "none";
+
+});
+
+popup.addEventListener("click", function(e){
+
+    if(e.target === popup){
+
+        popup.style.display = "none";
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>

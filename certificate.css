@@ -1,0 +1,575 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0f172a;
+    color:#ffffff;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.header{
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 60px;
+
+    background:#111827;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+/* Logo */
+
+.logo a{
+
+    text-decoration:none;
+    color:#fff;
+
+    font-size:30px;
+    font-weight:700;
+}
+
+/* Hello */
+
+.hello{
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-family:'Dancing Script',cursive;
+
+    font-size:38px;
+
+    color:#22d3ee;
+
+    pointer-events:none;
+}
+
+/* Navbar */
+
+nav{
+
+    display:flex;
+
+    gap:25px;
+}
+
+nav a{
+
+    text-decoration:none;
+
+    color:white;
+
+    transition:.3s;
+}
+
+nav a:hover,
+nav .active{
+
+    color:#22d3ee;
+}
+
+/* ===========================
+   TITLE
+=========================== */
+
+.title{
+
+    text-align:center;
+
+    padding:70px 20px;
+}
+
+.title h1{
+
+    font-size:45px;
+
+    color:#22d3ee;
+
+    margin-bottom:15px;
+}
+
+.title p{
+
+    color:#cbd5e1;
+
+    font-size:18px;
+
+    max-width:700px;
+
+    margin:auto;
+
+    line-height:30px;
+}
+
+/* ===========================
+   CERTIFICATE GRID
+=========================== */
+
+.certificate-container{
+
+    width:90%;
+    max-width:1300px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+    padding-bottom:80px;
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.certificate-card{
+
+    background:#1e293b;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    transition:.4s;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.certificate-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#22d3ee;
+}
+
+/* ===========================
+   IMAGE
+=========================== */
+
+.certificate-card img{
+
+    width:100%;
+    height:220px;
+
+    object-fit:cover;
+
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+.certificate-card:hover img{
+
+    transform:scale(1.05);
+}
+
+/* ===========================
+   CONTENT
+=========================== */
+
+.certificate-card h2{
+
+    padding:20px 20px 5px;
+
+    font-size:22px;
+}
+
+.certificate-card h4{
+
+    padding:0 20px;
+
+    color:#22d3ee;
+
+    font-weight:500;
+
+    margin-bottom:15px;
+}
+
+.certificate-card p{
+
+    padding:0 20px;
+
+    color:#cbd5e1;
+
+    line-height:28px;
+
+    min-height:90px;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.buttons{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:20px;
+}
+
+.buttons button,
+.buttons a{
+
+    width:48%;
+
+    text-align:center;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:6px;
+
+    text-decoration:none;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.buttons button{
+
+    background:#22d3ee;
+
+    color:#0f172a;
+}
+
+.buttons a{
+
+    border:2px solid #22d3ee;
+
+    color:#22d3ee;
+}
+
+.buttons button:hover{
+
+    background:#0ea5b7;
+}
+
+.buttons a:hover{
+
+    background:#22d3ee;
+
+    color:#0f172a;
+}
+
+/* ===========================
+   POPUP
+=========================== */
+
+#popup{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,.9);
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+
+    animation:fade .3s ease;
+}
+
+#popupImage{
+
+    max-width:90%;
+    max-height:90%;
+
+    border-radius:10px;
+
+    box-shadow:0 0 30px rgba(34,211,238,.4);
+}
+
+#closeBtn{
+
+    position:absolute;
+
+    top:30px;
+    right:50px;
+
+    font-size:45px;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+#closeBtn:hover{
+
+    color:#22d3ee;
+
+    transform:rotate(90deg);
+}
+
+/* ===========================
+   CARD SHINE EFFECT
+=========================== */
+
+.certificate-card{
+
+    position:relative;
+}
+
+.certificate-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:100%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.08),
+        transparent
+    );
+
+    transition:.7s;
+}
+
+.certificate-card:hover::before{
+
+    left:100%;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+    margin-top:40px;
+
+    padding:30px;
+
+    background:#111827;
+
+    text-align:center;
+
+    color:#94a3b8;
+
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+/* ===========================
+   FADE ANIMATION
+=========================== */
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+    }
+
+    to{
+
+        opacity:1;
+    }
+}
+
+/* ===========================
+   TABLET
+=========================== */
+
+@media(max-width:992px){
+
+.header{
+
+    padding:20px 35px;
+}
+
+nav{
+
+    gap:18px;
+}
+
+nav a{
+
+    font-size:13px;
+}
+
+.title h1{
+
+    font-size:38px;
+}
+
+.certificate-container{
+
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+.header{
+
+    flex-direction:column;
+
+    gap:20px;
+
+    padding:20px;
+
+    position:relative;
+}
+
+.hello{
+
+    position:static;
+
+    transform:none;
+
+    font-size:34px;
+}
+
+nav{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:15px;
+}
+
+.title{
+
+    padding:50px 20px;
+}
+
+.title h1{
+
+    font-size:32px;
+}
+
+.title p{
+
+    font-size:15px;
+}
+
+.certificate-container{
+
+    grid-template-columns:1fr;
+}
+
+.buttons{
+
+    flex-direction:column;
+
+    gap:15px;
+}
+
+.buttons button,
+.buttons a{
+
+    width:100%;
+}
+
+#closeBtn{
+
+    top:15px;
+    right:20px;
+
+    font-size:35px;
+}
+
+}
+
+/* ===========================
+   SMALL MOBILE
+=========================== */
+
+@media(max-width:480px){
+
+.logo a{
+
+    font-size:25px;
+}
+
+.hello{
+
+    font-size:28px;
+}
+
+nav a{
+
+    font-size:12px;
+}
+
+.title h1{
+
+    font-size:28px;
+}
+
+.certificate-card h2{
+
+    font-size:20px;
+}
+
+.certificate-card p{
+
+    font-size:14px;
+}
+
+footer{
+
+    font-size:13px;
+}
+
+}

@@ -1,0 +1,489 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    background:#0f172a;
+
+    color:white;
+}
+
+.header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 60px;
+
+    background:#111827;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+}
+
+.logo a{
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:30px;
+
+    font-weight:bold;
+}
+.logo a:hover {
+    color: #22d3ee;
+}
+.hello{
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-family:'Dancing Script',cursive;
+
+    font-size:38px;
+
+    color:#22d3ee;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    position: relative;
+
+    text-decoration: none;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: .3s;
+}
+
+/* Small underline */
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: #22d3ee;
+
+    transform: translateX(-50%);
+
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #22d3ee;
+}
+
+/* Line appears on hover */
+nav a:hover::after {
+    width: 18px;
+}
+
+/* Active page */
+nav a.active {
+    color: #22d3ee;
+}
+
+nav a.active::after {
+    width: 18px;
+}
+
+
+.title{
+
+    text-align:center;
+
+    margin:70px 0;
+}
+
+.title h1{
+
+    font-size:45px;
+
+    color:#22d3ee;
+
+    margin-bottom:15px;
+}
+
+.title p{
+
+    color:#cbd5e1;
+}
+
+.skills-container{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+    margin-bottom:80px;
+}
+
+.skill-card{
+
+    background:#1e293b;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    transition:.4s;
+
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.skill-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#22d3ee;
+}
+
+.skill-card h2{
+
+    color:#22d3ee;
+
+    margin-bottom:25px;
+}
+
+.skills{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+}
+
+.skills span{
+
+    padding:10px 18px;
+
+    background:#0f172a;
+
+    border-radius:30px;
+
+    border:1px solid rgba(34,211,238,.4);
+
+    color:#22d3ee;
+
+    transition:.3s;
+}
+
+.skills span:hover{
+
+    background:#22d3ee;
+
+    color:#0f172a;
+}
+
+footer{
+
+    text-align:center;
+
+    padding:30px;
+
+    background:#111827;
+
+    color:#94a3b8;
+}
+/* ===========================
+   SKILL CARD ANIMATION
+=========================== */
+
+.skill-card{
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card::before{
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.08),
+        transparent
+    );
+
+    transition: .6s;
+}
+
+.skill-card:hover::before{
+    left: 100%;
+}
+
+/* ===========================
+   BADGE EFFECT
+=========================== */
+
+.skills span{
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    letter-spacing: .5px;
+
+    box-shadow: 0 0 10px rgba(34,211,238,.15);
+}
+
+.skills span:hover{
+
+    transform: scale(1.08);
+
+    box-shadow: 0 0 18px rgba(34,211,238,.35);
+}
+
+/* ===========================
+   TITLE EFFECT
+=========================== */
+
+.title h1{
+
+    position: relative;
+
+    display: inline-block;
+}
+
+.title h1::after{
+
+    content: "";
+
+    position: absolute;
+
+    width: 60%;
+
+    height: 4px;
+
+    background: #22d3ee;
+
+    left: 20%;
+
+    bottom: -12px;
+
+    border-radius: 10px;
+}
+
+/* ===========================
+   HEADER EFFECT
+=========================== */
+
+.header{
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.25);
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+    margin-top: 60px;
+
+    border-top: 1px solid rgba(255,255,255,.08);
+
+    font-size: 14px;
+}
+
+/* ===========================
+   TABLET
+=========================== */
+
+@media(max-width:992px){
+
+.header{
+
+    padding:20px 35px;
+}
+
+nav{
+
+    gap:18px;
+}
+
+nav a{
+
+    font-size:13px;
+}
+
+.skills-container{
+
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+.header{
+
+    flex-direction:column;
+
+    gap:18px;
+
+    padding:20px;
+
+    position:relative;
+}
+
+/* Hello overlap avoid */
+
+.hello{
+
+    position:static;
+
+    transform:none;
+
+    font-size:34px;
+}
+
+nav{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:15px;
+}
+
+.title{
+
+    margin:45px 0;
+}
+
+.title h1{
+
+    font-size:34px;
+}
+
+.title p{
+
+    font-size:15px;
+
+    padding:0 20px;
+}
+
+.skills-container{
+
+    grid-template-columns:1fr;
+
+    width:90%;
+}
+
+.skill-card{
+
+    padding:25px;
+}
+
+.skill-card h2{
+
+    text-align:center;
+}
+
+.skills{
+
+    justify-content:center;
+}
+
+footer{
+
+    padding:25px;
+}
+
+}
+
+/* ===========================
+   SMALL MOBILE
+=========================== */
+
+@media(max-width:480px){
+
+.logo a{
+
+    font-size:25px;
+}
+
+.hello{
+
+    font-size:28px;
+}
+
+nav a{
+
+    font-size:12px;
+}
+
+.title h1{
+
+    font-size:28px;
+}
+
+.skill-card{
+
+    padding:20px;
+}
+
+.skills span{
+
+    font-size:12px;
+
+    padding:8px 15px;
+}
+
+footer{
+
+    font-size:13px;
+}
+
+}

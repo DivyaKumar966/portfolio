@@ -1,0 +1,871 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #0f172a;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+    height: 80px;
+    padding: 0 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: #111827;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo a {
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+.logo a:hover {
+    color: #22d3ee;
+}
+
+/* =========================================================
+   HELLO
+========================================================= */
+
+.hello {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    color: #22d3ee;
+
+    font-family: "Dancing Script", cursive;
+    font-size: 38px;
+
+    pointer-events: none;
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    position: relative;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #22d3ee;
+}
+
+/* ACTIVE NAVIGATION LINE */
+
+nav a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -10px;
+
+    width: 20px;
+    height: 2px;
+
+    background: #22d3ee;
+
+    transform: translateX(-50%);
+
+    border-radius: 10px;
+}
+
+/* =========================================================
+   CONTACT PAGE OUTER WRAPPERS
+   IMPORTANT - REMOVE UNWANTED WHITE BACKGROUND
+========================================================= */
+
+/* Common HTML wrappers */
+
+main,
+.mainContent,
+.contact-page,
+.contact-section,
+.contact-wrapper {
+    background: transparent !important;
+
+    border: none !important;
+
+    box-shadow: none !important;
+}
+
+/* Prevent any pseudo-element from creating white block */
+
+main::before,
+main::after,
+.mainContent::before,
+.mainContent::after,
+.contact-page::before,
+.contact-page::after,
+.contact-section::before,
+.contact-section::after,
+.contact-wrapper::before,
+.contact-wrapper::after {
+    content: none !important;
+
+    display: none !important;
+
+    background: transparent !important;
+
+    box-shadow: none !important;
+
+    border: none !important;
+}
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.contact-title {
+    width: 90%;
+    max-width: 850px;
+
+    margin: 90px auto 70px;
+
+    text-align: center;
+
+    background: transparent !important;
+}
+
+.small-title {
+    color: #22d3ee;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+}
+
+.contact-title h1 {
+    font-size: 52px;
+
+    margin-bottom: 20px;
+}
+
+.contact-title p:last-child {
+    color: #94a3b8;
+
+    font-size: 16px;
+
+    line-height: 30px;
+}
+
+/* =========================================================
+   MAIN CONTACT CONTAINER
+========================================================= */
+
+.contact-container {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 45px;
+
+    padding-bottom: 100px;
+
+    background: transparent !important;
+
+    border: none !important;
+
+    box-shadow: none !important;
+}
+
+/* =========================================================
+   CONTACT INFORMATION
+========================================================= */
+
+.contact-info {
+    background: transparent !important;
+
+    padding: 45px 30px;
+
+    border: none !important;
+
+    box-shadow: none !important;
+}
+
+.section-number {
+    color: #22d3ee;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+}
+
+.contact-info h2,
+.contact-form-section h2 {
+    font-size: 30px;
+
+    margin: 15px 0;
+}
+
+.contact-info > p {
+    color: #94a3b8;
+
+    line-height: 28px;
+
+    margin-bottom: 35px;
+}
+
+/* =========================================================
+   CONTACT INFO ITEMS
+========================================================= */
+
+.info-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: transparent;
+}
+
+.info-icon {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid rgba(34, 211, 238, 0.35);
+
+    border-radius: 10px;
+
+    color: #22d3ee;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.info-item:hover .info-icon {
+    background: #22d3ee;
+
+    color: #0f172a;
+
+    transform: translateY(-3px);
+}
+
+.info-item span {
+    display: block;
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    margin-bottom: 4px;
+}
+
+.info-item a {
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.info-item a:hover {
+    color: #22d3ee;
+}
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.contact-form-section {
+    padding: 45px;
+
+    background: #111827;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 20px;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.input-group {
+    margin-bottom: 22px;
+}
+
+.input-group label {
+    display: block;
+
+    color: #cbd5e1;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    margin-bottom: 8px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border: 1px solid #334155;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    background: #0f172a;
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.input-group textarea {
+    resize: vertical;
+
+    min-height: 140px;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #22d3ee;
+
+    box-shadow:
+        0 0 0 3px rgba(34, 211, 238, 0.08);
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: #475569;
+}
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.input-group small {
+    display: block;
+
+    min-height: 18px;
+
+    margin-top: 5px;
+
+    color: #f87171;
+
+    font-size: 11px;
+}
+
+/* =========================================================
+   SEND BUTTON
+========================================================= */
+
+.send-button {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #22d3ee;
+
+    color: #0f172a;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.send-button:hover {
+    background: #67e8f9;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(34, 211, 238, 0.2);
+}
+
+.send-button:disabled {
+    opacity: 0.7;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+/* =========================================================
+   FORM MESSAGE
+========================================================= */
+
+.form-message {
+    min-height: 25px;
+
+    margin-top: 18px;
+
+    text-align: center;
+
+    font-size: 13px;
+}
+
+.form-message.success {
+    color: #22d3ee;
+}
+
+.form-message.error {
+    color: #f87171;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    padding: 30px;
+
+    text-align: center;
+
+    color: #64748b;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: transparent;
+}
+
+/* =========================================================
+   LIGHT MODE
+========================================================= */
+
+body.light-mode {
+    background: #f5f8fc !important;
+
+    color: #0f172a;
+}
+
+/* IMPORTANT:
+   Remove ALL unwanted white outer wrappers */
+
+body.light-mode,
+body.light-mode main,
+body.light-mode .mainContent,
+body.light-mode .contact-page,
+body.light-mode .contact-section,
+body.light-mode .contact-wrapper,
+body.light-mode .contact-container {
+    background-color: transparent !important;
+
+    box-shadow: none !important;
+
+    border: none !important;
+}
+
+/* Actual page background */
+
+body.light-mode {
+    background: #f5f8fc !important;
+}
+
+/* =========================================================
+   LIGHT HEADER
+========================================================= */
+
+body.light-mode .header {
+    background: #ffffff;
+
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+body.light-mode .logo a {
+    color: #0f172a;
+}
+
+body.light-mode .logo a:hover {
+    color: #22d3ee;
+}
+
+body.light-mode nav a {
+    color: #0f172a;
+}
+
+body.light-mode nav a:hover,
+body.light-mode nav a.active {
+    color: #22d3ee;
+}
+
+body.light-mode .hello {
+    color: #22d3ee;
+}
+
+/* =========================================================
+   LIGHT CONTACT TITLE
+========================================================= */
+
+body.light-mode .contact-title {
+    background: transparent !important;
+
+    box-shadow: none !important;
+
+    border: none !important;
+}
+
+body.light-mode .contact-title h1 {
+    color: #0f172a;
+}
+
+body.light-mode .contact-title p:last-child {
+    color: #64748b;
+}
+
+/* =========================================================
+   LIGHT CONTACT INFO
+========================================================= */
+
+body.light-mode .contact-info {
+    background: transparent !important;
+
+    border: none !important;
+
+    box-shadow: none !important;
+}
+
+body.light-mode .contact-info h2 {
+    color: #0f172a;
+}
+
+body.light-mode .contact-info > p {
+    color: #64748b;
+}
+
+body.light-mode .info-item {
+    background: transparent !important;
+
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+body.light-mode .info-item span {
+    color: #64748b;
+}
+
+body.light-mode .info-item a {
+    color: #0f172a;
+}
+
+body.light-mode .info-item a:hover {
+    color: #22d3ee;
+}
+
+body.light-mode .info-icon {
+    border-color: rgba(34, 211, 238, 0.35);
+
+    color: #22d3ee;
+}
+
+body.light-mode .info-item:hover .info-icon {
+    background: #22d3ee;
+
+    color: #ffffff;
+}
+
+/* =========================================================
+   LIGHT FORM CARD
+========================================================= */
+
+body.light-mode .contact-form-section {
+    background: #ffffff !important;
+
+    border: 1px solid rgba(15, 23, 42, 0.08);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 50px rgba(15, 23, 42, 0.08);
+}
+
+body.light-mode .contact-form-section h2 {
+    color: #0f172a;
+}
+
+body.light-mode .input-group label {
+    color: #475569;
+}
+
+body.light-mode .input-group input,
+body.light-mode .input-group textarea {
+    background: #ffffff;
+
+    color: #0f172a;
+
+    border: 1px solid #cbd5e1;
+}
+
+body.light-mode .input-group input::placeholder,
+body.light-mode .input-group textarea::placeholder {
+    color: #94a3b8;
+}
+
+body.light-mode .input-group input:focus,
+body.light-mode .input-group textarea:focus {
+    border-color: #22d3ee;
+
+    box-shadow:
+        0 0 0 3px rgba(34, 211, 238, 0.08);
+}
+
+/* =========================================================
+   LIGHT FOOTER
+========================================================= */
+
+body.light-mode footer {
+    color: #64748b;
+
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+
+    background: #ffffff !important;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .header {
+        padding: 0 30px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .contact-title h1 {
+        font-size: 42px;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .contact-info {
+        padding: 30px 0;
+    }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .header {
+        height: auto;
+
+        padding: 20px;
+
+        flex-direction: column;
+
+        gap: 18px;
+
+        position: relative;
+    }
+
+    .logo {
+        order: 1;
+    }
+
+    .hello {
+        position: static;
+
+        transform: none;
+
+        order: 2;
+
+        font-size: 32px;
+    }
+
+    nav {
+        order: 3;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 12px 18px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    nav a.active::after {
+        bottom: -7px;
+
+        width: 16px;
+    }
+
+    .contact-title {
+        width: 92%;
+
+        margin: 55px auto;
+    }
+
+    .contact-title h1 {
+        font-size: 34px;
+    }
+
+    .contact-title p:last-child {
+        font-size: 14px;
+
+        line-height: 26px;
+    }
+
+    .contact-container {
+        width: 92%;
+
+        gap: 35px;
+    }
+
+    .contact-info {
+        padding: 20px 0;
+    }
+
+    .contact-form-section {
+        padding: 30px 22px;
+    }
+
+    .contact-info h2,
+    .contact-form-section h2 {
+        font-size: 25px;
+    }
+
+    .info-item a {
+        font-size: 13px;
+
+        word-break: break-word;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+
+    .hello {
+        font-size: 28px;
+    }
+
+    nav {
+        gap: 10px 14px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .contact-title h1 {
+        font-size: 30px;
+    }
+
+    .contact-form-section {
+        padding: 25px 18px;
+    }
+
+    .info-item {
+        gap: 12px;
+    }
+
+    .info-icon {
+        width: 42px;
+
+        height: 42px;
+    }
+}

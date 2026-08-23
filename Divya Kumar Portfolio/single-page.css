@@ -1,0 +1,273 @@
+
+/* =========================================================
+   DK PORTFOLIO — SINGLE PAGE MODE
+   Keeps the sections visually consistent with their
+   individual multi-page versions.
+========================================================= */
+
+html {
+    scroll-behavior: smooth !important;
+    scroll-padding-top: 90px;
+}
+
+body {
+    overflow-x: hidden !important;
+}
+
+/* The six outer single-page wrappers are NOT cards.
+   Their inner elements provide the actual page UI. */
+body > main > section[id] {
+    position: relative;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border: 0 !important;
+    border-radius: 0;
+    background: transparent !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    overflow: visible;
+    color: inherit;
+}
+
+body > main > section[id]::before,
+body > main > section[id]::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* Anchor landing position */
+#home,
+#about,
+#skills,
+#projects,
+#certificates,
+#contact {
+    scroll-margin-top: 90px;
+}
+
+/* Give every page its own visual breathing room */
+#about {
+    padding: 90px 0 40px !important;
+}
+
+#skills {
+    padding: 50px 0 70px !important;
+}
+
+#projects {
+    padding: 50px 0 70px !important;
+}
+
+#certificates {
+    padding: 50px 0 80px !important;
+}
+
+#contact {
+    padding: 50px 0 0 !important;
+}
+
+/* The inner About layout remains the same as about.html */
+#about .about_content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* The title used by Skills / Projects / Certificates should
+   remain a title, not become a generic premium card. */
+#skills > .title,
+#projects > .title,
+#certificates > .title {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto 70px;
+    padding: 0;
+    border: 0 !important;
+    border-radius: 0;
+    background: transparent !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+#skills > .title h1,
+#projects > .title h1,
+#certificates > .title h1 {
+    margin-bottom: 15px;
+}
+
+#skills > .title p,
+#projects > .title p,
+#certificates > .title p {
+    background: transparent !important;
+}
+
+/* Projects: keep the four project blocks exactly as blocks,
+   without the generic section-card styling. */
+#projects > .project {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto 110px;
+    padding: 0;
+    border: 0 !important;
+    border-radius: 0;
+    background: transparent !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+#projects > .project:last-child {
+    margin-bottom: 0;
+}
+
+/* Certificates: only certificate cards should look like cards */
+#certificates > .certificate-container {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 0 30px;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Contact: the outer wrapper is transparent.
+   The two inner panels are the actual cards. */
+#contact > .contact-title {
+    width: 90%;
+    max-width: 850px;
+    margin: 0 auto 70px;
+    padding: 0;
+    border: 0 !important;
+    border-radius: 0;
+    background: transparent !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+#contact > .contact-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 0 100px;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Contact cards */
+#contact .contact-info,
+#contact .contact-form-section {
+    border-radius: 20px;
+}
+
+/* Do not let generic section rules turn contact inner content
+   into nested cards. */
+#contact .contact-info {
+    padding: 45px 30px;
+    background: rgba(15, 23, 42, 0.78) !important;
+}
+
+#contact .contact-form-section {
+    padding: 45px;
+    background: rgba(15, 23, 42, 0.94) !important;
+}
+
+/* Single-page footer */
+.single-page-footer {
+    margin-top: 0 !important;
+    padding: 30px !important;
+    text-align: center;
+    color: #64748b !important;
+    background: rgba(7, 11, 20, 0.78) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Light mode */
+body.dk-light > main > section[id] {
+    background: transparent !important;
+}
+
+body.dk-light #skills > .title,
+body.dk-light #projects > .title,
+body.dk-light #certificates > .title,
+body.dk-light #contact > .contact-title {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+body.dk-light #contact .contact-info,
+body.dk-light #contact .contact-form-section {
+    background: rgba(255, 255, 255, 0.88) !important;
+    border-color: rgba(15, 23, 42, 0.09) !important;
+    box-shadow: 0 18px 55px rgba(15, 23, 42, 0.09) !important;
+    color: #111827 !important;
+}
+
+body.dk-light .single-page-footer {
+    background: rgba(255, 255, 255, 0.88) !important;
+    color: #111827 !important;
+    border-top-color: rgba(17, 24, 39, 0.08) !important;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    #about,
+    #skills,
+    #projects,
+    #certificates,
+    #contact {
+        padding-top: 60px !important;
+    }
+
+    #projects > .project {
+        margin-bottom: 80px;
+    }
+}
+
+@media (max-width: 700px) {
+    html {
+        scroll-padding-top: 20px;
+    }
+
+    #home,
+    #about,
+    #skills,
+    #projects,
+    #certificates,
+    #contact {
+        scroll-margin-top: 20px;
+    }
+
+    #about {
+        padding-top: 45px !important;
+    }
+
+    #skills > .title,
+    #projects > .title,
+    #certificates > .title,
+    #contact > .contact-title {
+        width: 92%;
+        margin-bottom: 45px;
+    }
+
+    #projects > .project,
+    #certificates > .certificate-container,
+    #contact > .contact-container {
+        width: 92%;
+    }
+
+    #contact .contact-info {
+        padding: 30px 22px;
+    }
+
+    #contact .contact-form-section {
+        padding: 30px 22px;
+    }
+}

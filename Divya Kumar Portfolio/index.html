@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DK Portfolio</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="skills.css">
+    <link rel="stylesheet" href="project.css">
+    <link rel="stylesheet" href="certificate.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        section[id] {
+            scroll-margin-top: 80px;
+        }
+
+        #about,
+        #skills,
+        #projects,
+        #certificates,
+        #contact {
+            padding-top: 1px;
+        }
+
+        #about .about_content,
+        #skills .title,
+        #projects .title,
+        #certificates .title,
+        #contact .contact-title {
+            margin-top: 70px;
+        }
+
+        #contact .contact-title {
+            margin-top: 90px;
+        }
+
+        #about .about_info,
+        #skills .skills-container,
+        #projects .project,
+        #certificates .certificate-container,
+        #contact .contact-container {
+            margin-bottom: 80px;
+        }
+
+        #certificates .buttons {
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        #certificates .buttons button,
+        #certificates .buttons a {
+            width: 48%;
+        }
+
+        #home .hello {
+            position: static;
+            transform: none;
+        }
+    </style>
+    <link rel="stylesheet" href="premium.css">
+    <link rel="stylesheet" href="single-page.css">
+</head>
+
+<body>
+    <div class="dk-scroll-progress" aria-hidden="true"></div>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <!-- Logo -->
+        <div class="left">
+            <a href="index.html">
+                <p>DK</p>
+            </a>
+        </div>
+        <div class="header-hello">
+            hello
+        </div>
+
+        <div class="header-actions">
+            <button id="homeThemeToggle" class="home-theme-toggle" type="button" aria-label="Switch to light mode"
+                title="Switch to light mode">
+                <span class="theme-sun" aria-hidden="true">☼</span>
+                <span class="theme-moon" aria-hidden="true">☾</span>
+            </button>
+        </div>
+
+        <nav class="right">
+            <a href="./index.html" class="active">HOME</a>
+            <a href="./about.html">ABOUT</a>
+            <a href="./skills.html">SKILLS</a>
+            <a href="./project.html">PROJECTS</a>
+            <a href="./certification.html">CERTIFICATES</a>
+            <a href="./contact.html">CONTACT</a>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HOME ================= -->
+
+    <main>
+
+        <section id="home" class="index_main">
+
+            <!-- ================= PROFILE IMAGE ================= -->
+
+            <div class="profile-design home-photo-design">
+
+                <div class="photo-orbit orbit-one"></div>
+                <div class="photo-orbit orbit-two"></div>
+                <div class="photo-dots" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                </div>
+
+                <div class="photo-halo"></div>
+
+                <div class="profile-image">
+                    <img class="home-photo home-photo-dark" src="./images/home-dark.png"
+                        alt="Divya Kumar - dark mode profile">
+                    <img class="home-photo home-photo-light" src="./images/home-light.png"
+                        alt="Divya Kumar - light mode profile">
+                </div>
+
+                <div class="photo-label photo-label-top">
+                    <span>01</span>
+                    <strong>DEVELOPER</strong>
+                </div>
+
+                <div class="photo-label photo-label-bottom">
+                    <span>FULL STACK</span>
+                    <b>●</b>
+                    <span>JAVA</span>
+                </div>
+
+                <div class="photo-accent accent-left"></div>
+                <div class="photo-accent accent-bottom"></div>
+
+            </div>
+
+
+            <!-- ================= INTRODUCTION ================= -->
+
+            <div class="mainContent">
+
+                <p class="hello">
+                    Hello, I'm
+                </p>
+
+                <h1 class="name">
+                    DIVYA KUMAR P
+                </h1>
+
+                <h2 class="role">
+                    Full Stack Developer
+                </h2>
+
+                <p class="description">
+                    I am a B.Tech Information Technology student with an
+                    interest in full stack web development. I enjoy building
+                    responsive and user-friendly web applications and continuously
+                    improving my programming and problem-solving skills.
+                </p>
+
+
+                <!-- Buttons -->
+
+                <div class="buttons">
+
+                    <a href="./project.html" class="project-btn">
+                        View Projects
+                    </a>
+
+                    <a href="./RESUME.pdf" target="_blank" class="resume-btn">
+                        View Resume
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="about">
+
+            <main class="about_content">
+
+                <h1 class="about_head">ABOUT ME</h1>
+
+                <div class="about_main">
+
+                    <div class="about_image">
+                        <img src="./photo.png" alt="Divya Kumar">
+                    </div>
+
+                    <div class="about_info">
+                        <p>
+                            I am an Information Technology student with a strong interest
+                            in Full Stack Web Development and Software Development.
+                            I enjoy building responsive, user-friendly web applications
+                            and continuously improving my programming and problem-solving
+                            skills.
+                        </p>
+
+                        <p>
+                            I have experience working with HTML, CSS, JavaScript, and React
+                            for frontend development, along with Node.js and Express.js
+                            for building backend applications. I also work with MySQL and
+                            PostgreSQL for database management and have knowledge of Java,
+                            including object-oriented programming concepts.
+                        </p>
+
+                        <p>
+                            I enjoy applying my skills through practical projects and
+                            exploring new technologies to improve my development abilities.
+                            My goal is to begin my career as a Full Stack Developer /
+                            Software Developer, contribute to real-world applications,
+                            and continuously grow as a software engineer.
+                        </p>
+                    </div>
+
+                </div>
+
+            </main>
+
+        </section>
+
+        <section id="skills">
+
+            <section class="title">
+                <h1>MY SKILLS</h1>
+                <p>
+                    Technologies and tools that I use to build
+                    modern full stack web applications.
+                </p>
+            </section>
+
+            <div class="skills-container">
+                <div class="skill-card">
+                    <h2>Frontend</h2>
+                    <div class="skills">
+                        <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <h2>Backend</h2>
+                    <div class="skills"><span>Node.js</span><span>Express.js</span></div>
+                </div>
+
+                <div class="skill-card">
+                    <h2>Programming</h2>
+                    <div class="skills"><span>Java</span></div>
+                </div>
+
+                <div class="skill-card">
+                    <h2>Database</h2>
+                    <div class="skills"><span>MySQL</span><span>PostgreSQL</span><span>MongoDB</span></div>
+                </div>
+
+                <div class="skill-card">
+                    <h2>Tools</h2>
+                    <div class="skills"><span>Git</span><span>GitHub</span><span>VS Code</span><span>Postman</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <h2>Concepts</h2>
+                    <div class="skills"><span>REST API</span><span>CRUD</span><span>Responsive
+                            Design</span><span>OOP</span></div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="projects">
+
+            <section class="title">
+                <h1>MY PROJECTS</h1>
+                <p>
+                    A collection of projects that showcase my
+                    skills in Full Stack Web Development.
+                </p>
+            </section>
+
+            <section class="project">
+                <div class="project-image"><img src="./images/Secure Vault.jpeg" alt="Secure Vault"></div>
+                <div class="project-content">
+                    <h2>01</h2>
+                    <h1>Secure Vault</h1>
+                    <h3>Personal File Storage &amp; Management System</h3>
+                    <p>A secure file management web application developed using Node.js, Express.js and PostgreSQL.
+                        Users can securely upload, store and manage photos, videos, documents and text files with Local
+                        Login and Google OAuth authentication.</p>
+                    <div class="tech">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>EJS</span><span>Node.js</span><span>Express.js</span><span>Bcrypt</span><span>PostgreSQL</span><span>Passport.js</span><span>Multer</span><span>Cloudinary</span>
+                    </div>
+                    <div class="buttons"><a href="https://github.com/DivyaKumar966/secure-vault"
+                            target="_blank">GitHub</a><a href="https://secure-vault-wqvp.onrender.com"
+                            target="_blank">Live Demo</a></div>
+                </div>
+            </section>
+
+            <section class="project reverse">
+                <div class="project-image"><img src="./images/Cinemora.jpeg" alt="Cinemora"></div>
+                <div class="project-content">
+                    <h2>02</h2>
+                    <h1>Cinemora</h1>
+                    <h3>Movie Review System</h3>
+                    <p>A movie review and rating web application designed for users to explore movies, share their
+                        opinions and rate films through a simple and interactive interface.</p>
+                    <div class="tech">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span>
+                    </div>
+                    <div class="buttons"><a href="https://github.com/DivyaKumar966/Cinemora-movie-review-system"
+                            target="_blank">GitHub</a><a
+                            href="https://divyakumar966.github.io/Cinemora-movie-review-system/" target="_blank">Live
+                            Demo</a></div>
+                </div>
+            </section>
+
+            <section class="project">
+                <div class="project-image"><img src="images/CodeJar Poster.png" alt="CodeJar"></div>
+                <div class="project-content">
+                    <h2>03</h2>
+                    <h1>CodeJar</h1>
+                    <h3>Coding Practice &amp; Learning Platform</h3>
+                    <p>A modern coding practice platform designed to help developers improve programming and
+                        problem-solving skills through interactive coding challenges and a clean, user-friendly
+                        interface.</p>
+                    <div class="tech"><span>React</span><span>Java</span><span>Spring
+                            Boot</span><span>Maven</span><span>PostgreSQL</span></div>
+                    <div class="buttons"><a href="https://github.com/DivyaKumar966/codejar" target="_blank">GitHub</a><a
+                            href="#">Live Demo</a></div>
+                </div>
+            </section>
+
+            <section class="project reverse">
+                <div class="project-image"><img src="images/CineSeat Poster.png" alt="CineSeat"></div>
+                <div class="project-content">
+                    <h2>04</h2>
+                    <h1>CineSeat</h1>
+                    <h3>Movie Ticket Booking System</h3>
+                    <p>CineSeat is a full-stack movie ticket booking web application developed using Java Spring Boot.
+                        Users can browse movies, view show timings, select available seats and book movie tickets, while
+                        the system manages movies, theatres, shows, seats, bookings and user details.</p>
+                    <div class="tech">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Java</span><span>Spring
+                            Boot</span><span>Maven</span><span>Spring Data
+                            JPA</span><span>Hibernate</span><span>PostgreSQL</span><span>REST API</span>
+                    </div>
+                    <div class="buttons"><a href="#">GitHub</a><a href="#">Live Demo</a></div>
+                </div>
+            </section>
+        </section>
+
+        <section id="certificates">
+
+            <section class="title">
+                <h1>MY CERTIFICATES</h1>
+                <p>Certifications, Internship and Achievements</p>
+            </section>
+
+            <section class="certificate-container">
+                <div class="certificate-card">
+                    <img src="./images/JAVA CERTIFICATE.jpeg" alt="NPTEL">
+                    <h2>NPTEL Programming in Java</h2>
+                    <h4>NPTEL • 2026</h4>
+                    <p>Successfully completed Programming in Java course.</p>
+                    <div class="buttons"><button class="viewBtn"
+                            data-img="./images/JAVA CERTIFICATE.jpeg">View</button><a
+                            href="./images/JAVA CERTIFICATE.jpeg" download>Download</a></div>
+                </div>
+
+                <div class="certificate-card">
+                    <img src="./images/MINDUFL AI.jpeg" alt="Internship">
+                    <h2>Internship Certificate</h2>
+                    <h4>Training Internship</h4>
+                    <p>Successfully completed Full Stack Internship.</p>
+                    <div class="buttons"><button class="viewBtn" data-img="./images/MINDUFL AI.jpeg">View</button><a
+                            href="./images/MINDUFL AI.jpeg" download>Download</a></div>
+                </div>
+
+                <!-- <div class="certificate-card">
+                    <img src="./images/workshop.jpg" alt="Workshop">
+                    <h2>Workshop Certificate</h2>
+                    <h4>Technical Workshop</h4>
+                    <p>Participated in Web Development Workshop.</p>
+                    <div class="buttons"><button class="viewBtn" data-img="./images/workshop.jpg">View</button><a
+                            href="./images/workshop.jpg" download>Download</a></div>
+                </div>
+
+                <div class="certificate-card">
+                    <img src="./images/achievement.jpg" alt="Achievement">
+                    <h2>Achievement</h2>
+                    <h4>Technical Event</h4>
+                    <p>Participation in Technical Events.</p>
+                    <div class="buttons"><button class="viewBtn" data-img="./images/achievement.jpg">View</button><a
+                            href="./images/achievement.jpg" download>Download</a></div>
+                </div> -->
+            </section>
+
+            <div id="popup">
+                <span id="closeBtn">&times;</span>
+                <img id="popupImage" src="" alt="Certificate">
+            </div>
+
+        </section>
+
+        <section id="contact">
+
+            <section class="contact-title">
+                <p class="small-title">GET IN TOUCH</p>
+                <h1>Let's Connect</h1>
+                <p>
+                    Have a project, opportunity or just want to say hello?
+                    Feel free to send me a message.
+                </p>
+            </section>
+
+            <main class="contact-container">
+                <section class="contact-info">
+                    <span class="section-number">01</span>
+                    <h2>Contact Information</h2>
+                    <p>I'm always open to discussing new opportunities, projects and ideas.</p>
+
+                    <div class="info-item">
+                        <div class="info-icon">@</div>
+                        <div><span>Email</span>
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=divyakumar090606@gmail.com"
+                                target="_blank">
+                                divyakumar090606@gmail.com
+                            </a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">☎</div>
+                        <div><span>Phone</span><a href="tel:+918838985254">+91 8838985254</a></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">in</div>
+                        <div><span>LinkedIn</span><a
+                                href="https://www.linkedin.com/in/divya-kumar-p-33673a322?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                                target="_blank">LinkedIn Profile</a></div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">GH</div>
+                        <div><span>GitHub</span><a href="https://github.com/DivyaKumar966" target="_blank">GitHub
+                                Profile</a></div>
+                    </div>
+                </section>
+
+                <section class="contact-form-section">
+                    <span class="section-number">02</span>
+                    <h2>Send a Message</h2>
+                    <form id="contactForm">
+                        <div class="input-group"><label for="name">Your Name</label><input type="text" id="name"
+                                name="name" placeholder="Enter your name" autocomplete="name" required><small
+                                id="nameError"></small></div>
+                        <div class="input-group"><label for="email">Email Address</label><input type="email" id="email"
+                                name="email" placeholder="Enter your email" autocomplete="email" required><small
+                                id="emailError"></small></div>
+                        <div class="input-group"><label for="subject">Subject</label><input type="text" id="subject"
+                                name="subject" placeholder="Enter subject" required><small id="subjectError"></small>
+                        </div>
+                        <div class="input-group"><label for="message">Message</label><textarea id="message"
+                                name="message" rows="6" placeholder="Write your message..." required></textarea><small
+                                id="messageError"></small></div>
+                        <button type="submit" id="sendButton" class="send-button"><span id="buttonText">Send
+                                Message</span></button>
+                        <p id="formMessage" class="form-message"></p>
+                    </form>
+                </section>
+            </main>
+
+        </section>
+
+    </main>
+
+    <footer class="single-page-footer">
+        <p>© 2026 DK Portfolio</p>
+    </footer>
+
+    <script>
+        const popup = document.getElementById("popup");
+        const popupImage = document.getElementById("popupImage");
+        const closeBtn = document.getElementById("closeBtn");
+
+        document.querySelectorAll(".viewBtn").forEach(button => {
+            button.addEventListener("click", function () {
+                popupImage.src = this.getAttribute("data-img");
+                popup.style.display = "flex";
+            });
+        });
+
+        closeBtn.addEventListener("click", function () {
+            popup.style.display = "none";
+        });
+
+        popup.addEventListener("click", function (event) {
+            if (event.target === popup) {
+                popup.style.display = "none";
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="./contact.js"></script>
+
+    <script src="./home-theme.js"></script>
+    <script src="./effects.js"></script>
+</body>
+
+</html>

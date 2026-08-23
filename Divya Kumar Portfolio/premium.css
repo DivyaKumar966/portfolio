@@ -1,0 +1,2107 @@
+/* =========================================================
+   DK PORTFOLIO — PREMIUM THEME + INTERACTION
+   Cleaned / Consolidated Version
+   ========================================================= */
+
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
+
+:root {
+    --p-bg: #070b14;
+    --p-panel: rgba(15, 23, 42, 0.78);
+    --p-panel-strong: rgba(15, 23, 42, 0.94);
+
+    --p-line: rgba(255, 255, 255, 0.09);
+
+    --p-text: #f8fafc;
+    --p-muted: #94a3b8;
+
+    --p-accent: #22d3ee;
+    --p-accent-dark: #0891b2;
+    --p-accent-2: #6366f1;
+
+    --p-glow: rgba(34, 211, 238, 0.24);
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+html {
+    scroll-behavior: smooth !important;
+}
+
+body {
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at 12% 12%,
+            rgba(34, 211, 238, 0.10),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 88% 20%,
+            rgba(99, 102, 241, 0.10),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #050810 0%,
+            #0a1020 48%,
+            #070b14 100%
+        ) !important;
+
+    color: var(--p-text);
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    z-index: -2;
+
+    pointer-events: none;
+
+    opacity: 0.34;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.028) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.028) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 85%
+        );
+}
+
+
+/* =========================================================
+   MOUSE LIGHT / GLOW
+========================================================= */
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    left: var(--mx, 50%);
+    top: var(--my, 35%);
+
+    transform: translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(34, 211, 238, 0.085),
+            transparent 68%
+        );
+
+    filter: blur(10px);
+
+    transition:
+        left 0.18s ease-out,
+        top 0.18s ease-out;
+}
+
+
+/* =========================================================
+   CUSTOM CURSOR
+========================================================= */
+
+.dk-cursor,
+.dk-cursor-dot {
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: 99999;
+
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+
+    opacity: 0;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.18s ease;
+}
+
+.dk-cursor {
+    width: 34px;
+    height: 34px;
+
+    border: 1px solid rgba(34, 211, 238, 0.75);
+
+    box-shadow:
+        0 0 25px rgba(34, 211, 238, 0.22);
+}
+
+.dk-cursor-dot {
+    width: 5px;
+    height: 5px;
+
+    background: #22d3ee;
+
+    box-shadow:
+        0 0 12px #22d3ee;
+}
+
+body.dk-cursor-ready .dk-cursor,
+body.dk-cursor-ready .dk-cursor-dot {
+    opacity: 1;
+}
+
+body.dk-hover .dk-cursor {
+    width: 52px;
+    height: 52px;
+
+    border-color: #22d3ee;
+
+    background: rgba(34, 211, 238, 0.06);
+}
+
+@media (pointer: fine) {
+    body.dk-cursor-ready,
+    body.dk-cursor-ready a,
+    body.dk-cursor-ready button {
+        cursor: none;
+    }
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+    background: rgba(7, 11, 20, 0.72) !important;
+
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.08) !important;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.20) !important;
+}
+
+.header .left a,
+.header .logo a {
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.header .left a:hover,
+.header .logo a:hover {
+    transform: translateY(-2px);
+
+    color: #22d3ee !important;
+}
+
+.header-hello,
+.header .hello {
+    text-shadow:
+        0 0 20px rgba(34, 211, 238, 0.25);
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav a {
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease !important;
+}
+
+nav a:hover {
+    transform: translateY(-2px);
+}
+
+nav a::after {
+    box-shadow:
+        0 0 10px rgba(34, 211, 238, 0.65);
+}
+
+
+/* =========================================================
+   THEME BUTTON
+========================================================= */
+
+.header-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-left: auto;
+    margin-right: 24px;
+}
+
+.home-theme-toggle {
+    width: 42px;
+    height: 42px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius: 12px;
+
+    background:
+        rgba(255, 255, 255, 0.045);
+
+    color: #ffffff;
+
+    display: grid;
+    place-items: center;
+
+    cursor: pointer;
+
+    font-size: 22px;
+    line-height: 1;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.home-theme-toggle:hover {
+    transform: translateY(-2px);
+
+    background:
+        rgba(34, 211, 238, 0.10);
+
+    border-color:
+        rgba(34, 211, 238, 0.35);
+
+    color: #22d3ee;
+}
+
+.theme-moon {
+    display: none;
+}
+
+
+/* =========================================================
+   SECTION RHYTHM
+========================================================= */
+
+main > section,
+main section[id] {
+    position: relative;
+}
+
+section[id] {
+    scroll-margin-top: 100px;
+}
+
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+.dk-reveal {
+    opacity: 0;
+
+    transform:
+        translateY(35px);
+
+    transition:
+        opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+        transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.dk-reveal.dk-visible {
+    opacity: 1;
+
+    transform: none;
+}
+
+.dk-reveal-left {
+    opacity: 0;
+
+    transform:
+        translateX(-45px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.dk-reveal-left.dk-visible {
+    opacity: 1;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   TITLES
+========================================================= */
+
+.title h1,
+.about_head,
+.contact-title h1 {
+    text-shadow:
+        0 0 28px rgba(34, 211, 238, 0.10);
+}
+
+.title p,
+.contact-title > p:last-child {
+    color: #a7b4c8 !important;
+}
+
+
+/* =========================================================
+   HOME
+========================================================= */
+
+#home {
+    min-height:
+        calc(100vh - 80px);
+
+    isolation: isolate;
+
+    overflow: hidden;
+}
+
+#home::before {
+    content: "";
+
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    border-radius: 50%;
+
+    right: 2%;
+    top: 8%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(34, 211, 238, 0.12),
+            transparent 68%
+        );
+
+    filter: blur(12px);
+
+    z-index: -1;
+
+    animation:
+        dkFloat 8s ease-in-out infinite;
+}
+
+@keyframes dkFloat {
+    0%,
+    100% {
+        transform:
+            translate3d(0, 0, 0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate3d(-20px, 18px, 0)
+            scale(1.04);
+    }
+}
+
+
+/* =========================================================
+   HOME PROFILE
+========================================================= */
+
+.profile-design {
+    transform-style: preserve-3d;
+
+    will-change: transform;
+}
+
+.profile-image {
+    border:
+        1px solid rgba(255, 255, 255, 0.12) !important;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.48),
+        0 0 55px rgba(34, 211, 238, 0.12) !important;
+
+    transform:
+        translateZ(20px);
+}
+
+.profile-image img {
+    transition:
+        transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+        filter 0.5s ease;
+}
+
+.profile-design:hover .profile-image img {
+    transform:
+        scale(1.045);
+}
+
+.layer-1,
+.layer-2 {
+    filter:
+        drop-shadow(
+            0 15px 20px rgba(0, 0, 0, 0.18)
+        );
+}
+
+
+/* =========================================================
+   HOME TAGS
+========================================================= */
+
+.tag {
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.22),
+        0 0 18px rgba(34, 211, 238, 0.12);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.profile-design:hover .tag-left {
+    transform:
+        translateX(-5px);
+}
+
+.profile-design:hover .tag-top {
+    transform:
+        translateY(-5px);
+}
+
+.profile-design:hover .tag-bottom {
+    transform:
+        translate(4px, 4px);
+}
+
+
+/* =========================================================
+   HOME TEXT
+========================================================= */
+
+.mainContent .name {
+    letter-spacing: -1.5px;
+}
+
+.mainContent .role {
+    background:
+        linear-gradient(
+            90deg,
+            #22d3ee,
+            #818cf8
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent !important;
+}
+
+.buttons a,
+.buttons button {
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.16);
+}
+
+
+/* =========================================================
+   SKILLS / CERTIFICATES / PROJECT CARDS
+========================================================= */
+
+.skill-card,
+.certificate-card,
+.project {
+    border-color:
+        rgba(255, 255, 255, 0.08) !important;
+
+    box-shadow:
+        0 18px 55px rgba(0, 0, 0, 0.18);
+}
+
+.skill-card,
+.certificate-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30, 41, 59, 0.82),
+            rgba(15, 23, 42, 0.68)
+        ) !important;
+
+    backdrop-filter:
+        blur(12px);
+}
+
+.skill-card:hover,
+.certificate-card:hover {
+    box-shadow:
+        0 22px 65px rgba(0, 0, 0, 0.28),
+        0 0 28px rgba(34, 211, 238, 0.08);
+}
+
+.skill-card,
+.certificate-card,
+.project-image {
+    transform-style:
+        preserve-3d;
+
+    will-change:
+        transform;
+}
+
+
+/* =========================================================
+   PROJECT IMAGE
+========================================================= */
+
+.project-image {
+    border:
+        1px solid rgba(255, 255, 255, 0.09);
+
+    box-shadow:
+        0 22px 55px rgba(0, 0, 0, 0.30);
+}
+
+.project-image img {
+    transition:
+        transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+        filter 0.5s ease !important;
+}
+
+.project:hover .project-image img {
+    transform:
+        scale(1.055);
+
+    filter:
+        saturate(1.08)
+        contrast(1.03);
+}
+
+
+/* =========================================================
+   TECH / SKILLS TAGS
+========================================================= */
+
+.tech span,
+.skills span {
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease !important;
+}
+
+.tech span:hover,
+.skills span:hover {
+    transform:
+        translateY(-3px) !important;
+}
+
+
+/* =========================================================
+   CERTIFICATES
+========================================================= */
+
+.certificate-card img {
+    transition:
+        transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1),
+        filter 0.4s ease;
+}
+
+.certificate-card:hover img {
+    transform:
+        scale(1.025);
+
+    filter:
+        saturate(1.08);
+}
+
+#popup {
+    backdrop-filter:
+        blur(10px);
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-info,
+.contact-form-section {
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.20);
+
+    backdrop-filter:
+        blur(12px);
+}
+
+.input-group input,
+.input-group textarea {
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease !important;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    transform:
+        translateY(-1px);
+
+    border-color:
+        rgba(34, 211, 238, 0.7) !important;
+
+    box-shadow:
+        0 0 0 4px rgba(34, 211, 238, 0.08),
+        0 10px 30px rgba(0, 0, 0, 0.12) !important;
+}
+
+
+/* =========================================================
+   IMPORTANT:
+   CONTACT CONTAINER IS NOT A CARD
+   This prevents the unwanted outer white box.
+========================================================= */
+
+.contact-container {
+    background: transparent !important;
+
+    border: none !important;
+
+    box-shadow: none !important;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    background:
+        rgba(7, 11, 20, 0.78) !important;
+
+    backdrop-filter:
+        blur(14px);
+}
+
+
+/* =========================================================
+   BROKEN IMAGE FALLBACK
+========================================================= */
+
+.dk-broken-image {
+    min-height: 220px;
+
+    display: grid;
+    place-items: center;
+
+    text-align: center;
+
+    padding: 25px;
+
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            rgba(34, 211, 238, 0.18),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            #111827,
+            #0b1220
+        );
+
+    color: #cbd5e1;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+}
+
+.dk-broken-image strong {
+    display: block;
+
+    color: #22d3ee;
+
+    font-size: 28px;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   SCROLL PROGRESS
+========================================================= */
+
+.dk-scroll-progress {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 3px;
+
+    z-index: 100000;
+
+    background:
+        linear-gradient(
+            90deg,
+            #22d3ee,
+            #6366f1
+        );
+
+    box-shadow:
+        0 0 16px rgba(34, 211, 238, 0.55);
+
+    transition:
+        width 0.08s linear;
+}
+
+
+/* =========================================================
+   HOME PHOTO — PROFESSIONAL PORTRAIT CARD
+========================================================= */
+
+.home-photo-design {
+    width: 460px !important;
+    height: 520px !important;
+
+    flex: 0 0 460px !important;
+
+    position: relative;
+
+    transform-style:
+        preserve-3d;
+}
+
+
+/* =========================================================
+   PHOTO DECORATIONS
+========================================================= */
+
+.home-photo-design .photo-orbit {
+    width: 360px !important;
+    height: 460px !important;
+
+    left: 42px !important;
+    top: 24px !important;
+
+    border-radius: 32px !important;
+
+    transform: none !important;
+
+    border:
+        1px solid rgba(34, 211, 238, 0.16) !important;
+}
+
+.home-photo-design .orbit-two {
+    left: 50px !important;
+    top: 32px !important;
+
+    border:
+        1px solid rgba(34, 211, 238, 0.18) !important;
+}
+
+.home-photo-design .photo-halo {
+    left: 58px !important;
+    top: 62px !important;
+
+    width: 345px !important;
+    height: 390px !important;
+
+    border-radius: 40px !important;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(34, 211, 238, 0.11),
+            transparent 70%
+        ) !important;
+
+    filter:
+        blur(18px) !important;
+}
+
+
+/* =========================================================
+   MAIN HOME PHOTO
+========================================================= */
+
+.home-photo-design .profile-image {
+    position: absolute;
+
+    left: 55px !important;
+    top: 18px !important;
+
+    width: 350px !important;
+    height: 480px !important;
+
+    overflow: hidden !important;
+
+    border-radius: 30px !important;
+
+    clip-path: none !important;
+
+    background:
+        #080b10 !important;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.13) !important;
+
+    box-shadow:
+        0 30px 75px rgba(0, 0, 0, 0.42),
+        0 0 0 8px rgba(255, 255, 255, 0.025),
+        16px 16px 0 rgba(34, 211, 238, 0.09),
+        0 0 60px rgba(34, 211, 238, 0.08) !important;
+
+    transform:
+        translateZ(24px);
+}
+
+
+/* =========================================================
+   INNER PHOTO FRAME
+========================================================= */
+
+.home-photo-design .profile-image::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 10px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.11);
+
+    border-radius: 22px;
+
+    pointer-events: none;
+
+    z-index: 8;
+}
+
+
+/* =========================================================
+   PHOTO CORNER MARK
+========================================================= */
+
+.home-photo-design .profile-image::after {
+    content: "";
+
+    position: absolute;
+
+    right: 14px;
+    bottom: 14px;
+
+    width: 42px;
+    height: 42px;
+
+    border-right:
+        2px solid #22d3ee;
+
+    border-bottom:
+        2px solid #22d3ee;
+
+    border-radius:
+        0 0 10px 0;
+
+    opacity: 0.9;
+
+    pointer-events: none;
+
+    z-index: 9;
+}
+
+
+/* =========================================================
+   HOME PHOTO IMAGE
+========================================================= */
+
+.home-photo-design .home-photo {
+    position: absolute !important;
+    inset: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: contain !important;
+
+    object-position:
+        center center !important;
+
+    transform:
+        none !important;
+
+    background:
+        #080b10;
+}
+
+.home-photo-design .home-photo-light {
+    background:
+        #f4f4f4;
+}
+
+/* Keep both theme images in the same frame.
+   Only the active theme image is visible. */
+.home-photo-design .home-photo-dark {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+.home-photo-design .home-photo-light {
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+}
+
+body.dk-light .home-photo-design .home-photo-dark,
+body.home-light .home-photo-design .home-photo-dark {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    z-index: 1 !important;
+}
+
+body.dk-light .home-photo-design .home-photo-light,
+body.home-light .home-photo-design .home-photo-light {
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 2 !important;
+}
+
+
+/* =========================================================
+   PHOTO HOVER
+========================================================= */
+
+.home-photo-design:hover .profile-image {
+    transform:
+        translateZ(24px)
+        translateY(-5px) !important;
+
+    box-shadow:
+        0 38px 85px rgba(0, 0, 0, 0.48),
+        0 0 0 8px rgba(255, 255, 255, 0.03),
+        16px 16px 0 rgba(34, 211, 238, 0.13),
+        0 0 78px rgba(34, 211, 238, 0.11) !important;
+}
+
+.home-photo-design:hover .home-photo {
+    transform:
+        none !important;
+}
+
+
+/* =========================================================
+   PHOTO LABELS
+========================================================= */
+
+.home-photo-design .photo-label-top {
+    left: 0 !important;
+    top: 112px !important;
+}
+
+.home-photo-design .photo-label-bottom {
+    right: 0 !important;
+    bottom: 18px !important;
+}
+
+.home-photo-design .accent-left {
+    left: 18px !important;
+    top: 205px !important;
+    height: 78px !important;
+}
+
+.home-photo-design .accent-bottom {
+    left: 70px !important;
+    bottom: 0 !important;
+    width: 72px !important;
+}
+
+
+/* =========================================================
+   ABOUT PHOTO
+========================================================= */
+
+.about-photo-design {
+    position: relative;
+
+    width: 350px;
+    height: 350px;
+
+    min-width: 350px;
+
+    flex: 0 0 350px;
+
+    border-radius: 50%;
+
+    border:
+        6px solid #22d3ee;
+
+    overflow: hidden;
+
+    background:
+        #111827;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.25);
+}
+
+.about-photo {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position:
+        center 18%;
+
+    display: block;
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.65s ease,
+        filter 0.4s ease;
+}
+
+.about-photo-light {
+    opacity: 0;
+}
+
+.about-photo-dark {
+    opacity: 1;
+}
+
+.about-photo-design:hover .about-photo {
+    transform:
+        scale(1.025);
+}
+
+
+/* =========================================================
+   LIGHT MODE — GLOBAL
+   COOL WHITE + BLUE/CYAN
+   NO ORANGE
+========================================================= */
+
+body.dk-light {
+    background:
+        radial-gradient(
+            circle at 12% 12%,
+            rgba(34, 211, 238, 0.07),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 88% 20%,
+            rgba(34, 211, 238, 0.05),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #f5f8fc 0%,
+            #ffffff 52%,
+            #eef4f8 100%
+        ) !important;
+
+    color:
+        #111827 !important;
+}
+
+
+/* =========================================================
+   LIGHT BACKGROUND GRID
+========================================================= */
+
+body.dk-light::before {
+    opacity: 0.18;
+
+    background-image:
+        linear-gradient(
+            rgba(15, 23, 42, 0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(15, 23, 42, 0.035) 1px,
+            transparent 1px
+        );
+}
+
+body.dk-light::after {
+    background:
+        radial-gradient(
+            circle,
+            rgba(34, 211, 238, 0.08),
+            transparent 68%
+        );
+}
+
+
+/* =========================================================
+   LIGHT HEADER
+========================================================= */
+
+body.dk-light .header {
+    background:
+        rgba(255, 255, 255, 0.88) !important;
+
+    border-bottom-color:
+        rgba(15, 23, 42, 0.08) !important;
+
+    box-shadow:
+        0 12px 35px rgba(15, 23, 42, 0.07) !important;
+}
+
+body.dk-light .left p,
+body.dk-light .left a,
+body.dk-light .right a,
+body.dk-light .logo a,
+body.dk-light .header-hello,
+body.dk-light .header .hello,
+body.dk-light nav a {
+    color:
+        #0f172a !important;
+
+    text-shadow: none !important;
+}
+
+
+/* =========================================================
+   LIGHT NAV ACTIVE / HOVER
+========================================================= */
+
+body.dk-light .right a:hover,
+body.dk-light .right a.active,
+body.dk-light nav a:hover,
+body.dk-light nav a.active {
+    color:
+        #0891b2 !important;
+}
+
+body.dk-light nav a::after {
+    background:
+        #0891b2 !important;
+
+    box-shadow:
+        0 0 10px rgba(34, 211, 238, 0.28) !important;
+}
+
+
+/* =========================================================
+   LIGHT THEME BUTTON
+========================================================= */
+
+body.dk-light .home-theme-toggle {
+    color:
+        #0f172a !important;
+
+    background:
+        rgba(15, 23, 42, 0.045) !important;
+
+    border-color:
+        rgba(15, 23, 42, 0.10) !important;
+}
+
+body.dk-light .home-theme-toggle:hover {
+    background:
+        rgba(34, 211, 238, 0.10) !important;
+
+    border-color:
+        rgba(8, 145, 178, 0.35) !important;
+
+    color:
+        #0891b2 !important;
+}
+
+
+/* =========================================================
+   LIGHT TEXT
+========================================================= */
+
+body.dk-light .title h1,
+body.dk-light .about_head,
+body.dk-light .contact-title h1,
+body.dk-light .skill-card h2,
+body.dk-light .certificate-card h2,
+body.dk-light .project-content h1,
+body.dk-light .project-content h2,
+body.dk-light .project-content h3,
+body.dk-light .contact-info h2,
+body.dk-light .contact-form-section h2 {
+    color:
+        #111827 !important;
+
+    text-shadow:
+        none !important;
+}
+
+body.dk-light .title p,
+body.dk-light .contact-title > p:last-child,
+body.dk-light .about_info p,
+body.dk-light .skill-card p,
+body.dk-light .certificate-card p,
+body.dk-light .project-content p,
+body.dk-light .contact-info p,
+body.dk-light .contact-form-section p,
+body.dk-light .input-group label {
+    color:
+        #475569 !important;
+}
+
+
+/* =========================================================
+   LIGHT ACCENT
+========================================================= */
+
+body.dk-light .small-title,
+body.dk-light .section-number {
+    color:
+        #0891b2 !important;
+}
+
+body.dk-light .mainContent .role,
+body.dk-light .about_head {
+    color:
+        #22d3ee !important;
+}
+
+body.dk-light .mainContent .role {
+    background:
+        linear-gradient(
+            90deg,
+            #0f172a,
+            #0891b2
+        );
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    color:
+        transparent !important;
+}
+
+
+/* =========================================================
+   LIGHT CARDS
+========================================================= */
+
+body.dk-light .skill-card,
+body.dk-light .certificate-card,
+body.dk-light .project,
+body.dk-light .contact-info,
+body.dk-light .contact-form-section {
+    background:
+        rgba(255, 255, 255, 0.86) !important;
+
+    border-color:
+        rgba(15, 23, 42, 0.09) !important;
+
+    box-shadow:
+        0 18px 55px rgba(15, 23, 42, 0.09) !important;
+
+    color:
+        #111827 !important;
+}
+
+body.dk-light .skill-card:hover,
+body.dk-light .certificate-card:hover {
+    box-shadow:
+        0 22px 65px rgba(15, 23, 42, 0.13),
+        0 0 28px rgba(34, 211, 238, 0.07) !important;
+}
+
+
+/* =========================================================
+   VERY IMPORTANT:
+   CONTACT CONTAINER MUST STAY TRANSPARENT
+   Only contact-info and contact-form-section are cards.
+========================================================= */
+
+body.dk-light .contact-container {
+    background:
+        transparent !important;
+
+    border:
+        none !important;
+
+    box-shadow:
+        none !important;
+}
+
+
+/* =========================================================
+   LIGHT CONTACT CARDS
+========================================================= */
+
+body.dk-light .contact-info,
+body.dk-light .contact-form-section {
+    backdrop-filter:
+        blur(14px);
+}
+
+
+/* =========================================================
+   LIGHT INPUTS
+========================================================= */
+
+body.dk-light input,
+body.dk-light textarea,
+body.dk-light select {
+    background:
+        #ffffff !important;
+
+    color:
+        #111827 !important;
+
+    border-color:
+        rgba(17, 24, 39, 0.14) !important;
+}
+
+body.dk-light input::placeholder,
+body.dk-light textarea::placeholder {
+    color:
+        #9ca3af !important;
+}
+
+
+/* =========================================================
+   LIGHT TECH TAGS
+========================================================= */
+
+body.dk-light .skills span,
+body.dk-light .tech span {
+    background:
+        rgba(34, 211, 238, 0.08) !important;
+
+    color:
+        #0e7490 !important;
+
+    border-color:
+        rgba(8, 145, 178, 0.18) !important;
+}
+
+
+/* =========================================================
+   LIGHT BUTTONS
+========================================================= */
+
+body.dk-light .buttons a,
+body.dk-light .project-btn {
+    border-color:
+        #0891b2 !important;
+
+    color:
+        #087f9b !important;
+}
+
+body.dk-light .buttons a:hover,
+body.dk-light .project-btn:hover {
+    background:
+        #0891b2 !important;
+
+    color:
+        #ffffff !important;
+}
+
+
+/* =========================================================
+   LIGHT FOOTER
+========================================================= */
+
+body.dk-light footer {
+    background:
+        rgba(255, 255, 255, 0.88) !important;
+
+    color:
+        #111827 !important;
+
+    border-top:
+        1px solid rgba(17, 24, 39, 0.08);
+}
+
+
+/* =========================================================
+   LIGHT HOME
+========================================================= */
+
+body.dk-light #home {
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #f7fafc 58%,
+            #eef5f8 100%
+        ) !important;
+}
+
+body.dk-light #home::before {
+    background:
+        radial-gradient(
+            circle,
+            rgba(34, 211, 238, 0.10),
+            transparent 68%
+        );
+}
+
+body.dk-light #home .hello,
+body.dk-light #home .name {
+    color:
+        #0f172a !important;
+}
+
+body.dk-light #home .role {
+    background:
+        linear-gradient(
+            90deg,
+            #0f172a,
+            #0891b2
+        ) !important;
+
+    -webkit-background-clip:
+        text !important;
+
+    background-clip:
+        text !important;
+
+    color:
+        transparent !important;
+}
+
+body.dk-light #home .description {
+    color:
+        #475569 !important;
+}
+
+
+/* =========================================================
+   LIGHT HOME BUTTONS
+========================================================= */
+
+body.dk-light .project-btn {
+    background:
+        #22d3ee;
+
+    border-color:
+        #22d3ee;
+}
+
+body.dk-light .resume-btn {
+    color:
+        #0891b2;
+
+    border-color:
+        #0891b2;
+}
+
+body.dk-light .resume-btn:hover {
+    background:
+        #0891b2;
+
+    color:
+        #ffffff;
+}
+
+
+/* =========================================================
+   LIGHT HOME PHOTO
+========================================================= */
+
+body.dk-light .home-photo-dark {
+    opacity: 0;
+}
+
+body.dk-light .home-photo-light {
+    opacity: 1;
+}
+
+body.dk-light .home-photo-design .profile-image {
+    background:
+        #f4f4f4 !important;
+
+    border-color:
+        rgba(17, 24, 39, 0.12) !important;
+
+    box-shadow:
+        0 30px 75px rgba(15, 23, 42, 0.16),
+        0 0 0 8px rgba(17, 24, 39, 0.025),
+        16px 16px 0 rgba(34, 211, 238, 0.09),
+        0 0 60px rgba(34, 211, 238, 0.06) !important;
+}
+
+body.dk-light .home-photo-design .profile-image::before {
+    border-color:
+        rgba(17, 24, 39, 0.10);
+}
+
+body.dk-light .home-photo-design .orbit-one {
+    border-color:
+        rgba(17, 24, 39, 0.09) !important;
+}
+
+body.dk-light .home-photo-design .orbit-two {
+    border-color:
+        rgba(34, 211, 238, 0.20) !important;
+}
+
+body.dk-light .home-photo-design .home-photo-dark {
+    background:
+        #111827;
+}
+
+body.dk-light .home-photo-design .home-photo-light {
+    background:
+        #f4f4f4;
+}
+
+
+/* =========================================================
+   LIGHT PHOTO DECORATIONS
+========================================================= */
+
+body.dk-light .home-photo-design .photo-halo {
+    background:
+        radial-gradient(
+            circle,
+            rgba(34, 211, 238, 0.16) 0%,
+            rgba(34, 211, 238, 0.06) 43%,
+            transparent 72%
+        ) !important;
+}
+
+body.dk-light .home-photo-design .photo-orbit {
+    border-color:
+        rgba(8, 145, 178, 0.25) !important;
+}
+
+body.dk-light .home-photo-design .photo-dots span,
+body.dk-light .home-photo-design .photo-accent {
+    background:
+        #0891b2 !important;
+
+    box-shadow:
+        0 0 12px rgba(34, 211, 238, 0.25) !important;
+}
+
+body.dk-light .home-photo-design .photo-label {
+    background:
+        rgba(255, 255, 255, 0.84) !important;
+
+    color:
+        #0f172a !important;
+
+    border-color:
+        rgba(15, 23, 42, 0.10) !important;
+}
+
+body.dk-light .home-photo-design .photo-label-top span,
+body.dk-light .home-photo-design .photo-label-bottom b {
+    color:
+        #0891b2 !important;
+}
+
+
+/* =========================================================
+   LIGHT CURSOR
+========================================================= */
+
+body.dk-light .dk-cursor {
+    border-color:
+        #0891b2 !important;
+}
+
+body.dk-light .dk-cursor-dot {
+    background:
+        #0891b2 !important;
+}
+
+
+/* =========================================================
+   ABOUT LIGHT IMAGE
+========================================================= */
+
+body.dk-light .about-photo-dark {
+    opacity: 0;
+}
+
+body.dk-light .about-photo-light {
+    opacity: 1;
+}
+
+body.dk-light .about-photo-design {
+    border-color:
+        #22d3ee;
+
+    background:
+        #f3f4f6;
+
+    box-shadow:
+        0 18px 45px rgba(15, 23, 42, 0.12);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .header-actions {
+        margin-right: 12px;
+    }
+
+    .home-photo-design {
+        width: 400px !important;
+        height: 470px !important;
+
+        flex-basis: 400px !important;
+    }
+
+    .home-photo-design .profile-image {
+        left: 40px !important;
+
+        width: 320px !important;
+        height: 435px !important;
+
+        border-radius: 26px !important;
+    }
+
+    .home-photo-design .photo-orbit {
+        width: 330px !important;
+        height: 415px !important;
+
+        left: 31px !important;
+    }
+
+    .home-photo-design .photo-halo {
+        left: 31px !important;
+
+        width: 330px !important;
+        height: 350px !important;
+    }
+
+    .about-photo-design {
+        width: 300px;
+        height: 300px;
+
+        min-width: 300px;
+        flex-basis: 300px;
+    }
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .header-actions {
+        margin-right: 8px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    body::before {
+        background-size:
+            38px 38px;
+    }
+
+    body::after {
+        display: none;
+    }
+
+    .dk-cursor,
+    .dk-cursor-dot {
+        display: none !important;
+    }
+
+    #home {
+        min-height: auto;
+    }
+
+    .header-actions {
+        position: absolute;
+
+        right: 18px;
+        top: 16px;
+
+        margin: 0;
+    }
+
+    .home-theme-toggle {
+        width: 38px;
+        height: 38px;
+    }
+
+    .profile-design {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .home-photo-design {
+        width: 330px !important;
+        height: 430px !important;
+
+        flex-basis: 330px !important;
+    }
+
+    .home-photo-design .profile-image {
+        left: 27px !important;
+        top: 8px !important;
+
+        width: 276px !important;
+        height: 400px !important;
+
+        border-radius: 22px !important;
+    }
+
+    .home-photo-design .photo-orbit {
+        width: 292px !important;
+        height: 405px !important;
+
+        left: 19px !important;
+        top: 6px !important;
+
+        border-radius: 24px !important;
+    }
+
+    .home-photo-design .photo-halo {
+        left: 18px !important;
+        top: 45px !important;
+
+        width: 295px !important;
+        height: 320px !important;
+    }
+
+    .home-photo-design .photo-label-top {
+        left: 0 !important;
+        top: 92px !important;
+    }
+
+    .home-photo-design .photo-label-bottom {
+        right: 0 !important;
+        bottom: 10px !important;
+    }
+
+    .home-photo-design .accent-left {
+        left: 10px !important;
+        top: 175px !important;
+        height: 55px !important;
+    }
+
+    .project,
+    .project.reverse {
+        transform: none;
+    }
+
+    .project:hover {
+        transform: none;
+    }
+
+    .about-photo-design {
+        width: 280px;
+        height: 280px;
+
+        min-width: 280px;
+        flex-basis: 280px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .about-photo-design {
+        width: 220px;
+        height: 220px;
+
+        min-width: 220px;
+        flex-basis: 220px;
+    }
+}
+
+
+/* =========================================================
+   HOME LIGHT CLASS COMPATIBILITY
+   Keeps old home-theme.js compatible.
+   No orange.
+========================================================= */
+
+body.home-light {
+    background:
+        #f5f8fc !important;
+
+    color:
+        #111827;
+}
+
+body.home-light::before {
+    opacity:
+        0.18;
+
+    background-image:
+        linear-gradient(
+            rgba(15, 23, 42, 0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(15, 23, 42, 0.035) 1px,
+            transparent 1px
+        );
+}
+
+body.home-light::after {
+    background:
+        radial-gradient(
+            circle,
+            rgba(34, 211, 238, 0.08),
+            transparent 68%
+        );
+}
+
+body.home-light .header {
+    background:
+        rgba(255, 255, 255, 0.88) !important;
+
+    border-bottom-color:
+        rgba(15, 23, 42, 0.08) !important;
+
+    box-shadow:
+        0 12px 35px rgba(15, 23, 42, 0.07) !important;
+}
+
+body.home-light .left p,
+body.home-light .right a,
+body.home-light .logo a {
+    color:
+        #0f172a !important;
+}
+
+body.home-light .right a:hover,
+body.home-light .right a.active {
+    color:
+        #0891b2 !important;
+}
+
+body.home-light nav a::after {
+    background:
+        #0891b2 !important;
+
+    box-shadow:
+        0 0 10px rgba(34, 211, 238, 0.28);
+}
+
+body.home-light .header-hello,
+body.home-light #home .hello {
+    color:
+        #0891b2 !important;
+}
+
+body.home-light .home-theme-toggle {
+    color:
+        #0f172a;
+
+    background:
+        rgba(15, 23, 42, 0.045);
+
+    border-color:
+        rgba(15, 23, 42, 0.10);
+}
+
+body.home-light #home {
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #f7fafc 58%,
+            #eef5f8 100%
+        );
+}
+
+body.home-light #home .name {
+    color:
+        #111827;
+}
+
+body.home-light #home .role {
+    background:
+        linear-gradient(
+            90deg,
+            #111827,
+            #0891b2
+        );
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    color:
+        transparent !important;
+}
+
+body.home-light #home .description {
+    color:
+        #475569;
+}
+
+body.home-light .project-btn {
+    background:
+        #22d3ee;
+
+    border-color:
+        #22d3ee;
+}
+
+body.home-light .resume-btn {
+    color:
+        #0891b2;
+
+    border-color:
+        #0891b2;
+}
+
+body.home-light .resume-btn:hover {
+    background:
+        #0891b2;
+
+    color:
+        #ffffff;
+}
+
+body.home-light .home-photo-dark {
+    opacity: 0;
+}
+
+body.home-light .home-photo-light {
+    opacity: 1;
+}
+
+body.home-light .home-photo-design .profile-image {
+    background:
+        #f4f4f4;
+
+    border-color:
+        rgba(17, 24, 39, 0.10) !important;
+}
+
+body.home-light .photo-label {
+    background:
+        rgba(255, 255, 255, 0.84);
+
+    color:
+        #111827;
+
+    border-color:
+        rgba(17, 24, 39, 0.09);
+
+    box-shadow:
+        0 15px 30px rgba(15, 23, 42, 0.10);
+}
+
+body.home-light .photo-label-top span,
+body.home-light .photo-label-bottom b {
+    color:
+        #0891b2;
+}
+
+body.home-light .photo-dots span {
+    background:
+        #22d3ee;
+}
+
+body.home-light .orbit-two {
+    border-color:
+        rgba(17, 24, 39, 0.10);
+}
+
+/* =========================================================
+   CONTACT INFO — ALWAYS VISIBLE IN LIGHT MODE
+   The contact values must never depend on hover state.
+========================================================= */
+
+body.dk-light .contact-info .info-item,
+body.dk-light .contact-info .info-item > div,
+body.dk-light .contact-info .info-item span,
+body.dk-light .contact-info .info-item a {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+body.dk-light .contact-info .info-item span {
+    color: #64748b !important;
+}
+
+body.dk-light .contact-info .info-item a {
+    color: #0f172a !important;
+    text-shadow: none !important;
+}
+
+body.dk-light .contact-info .info-item a:hover {
+    color: #0891b2 !important;
+}
+
+/* Keep contact values visible on the single-page home section too. */
+body.dk-light #contact .contact-info .info-item a {
+    color: #0f172a !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}

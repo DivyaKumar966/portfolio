@@ -2,18 +2,11 @@
    EMAILJS CONFIGURATION
 ========================================= */
 
-/*
-    IMPORTANT:
+const PUBLIC_KEY = "S38F8Pe9NMvt4v-G7";
 
-    Replace these 3 values with your
-    EmailJS dashboard values.
-*/
+const SERVICE_ID = "service_kipl691";
 
-const PUBLIC_KEY = "YOUR_PUBLIC_KEY";
-
-const SERVICE_ID = "YOUR_SERVICE_ID";
-
-const TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+const TEMPLATE_ID = "template_yafy0qe";
 
 
 /* =========================================
@@ -21,14 +14,12 @@ const TEMPLATE_ID = "YOUR_TEMPLATE_ID";
 ========================================= */
 
 emailjs.init({
-
     publicKey: PUBLIC_KEY
-
 });
 
 
 /* =========================================
-   GET ELEMENTS
+   GET FORM ELEMENTS
 ========================================= */
 
 const contactForm =
@@ -42,6 +33,11 @@ const buttonText =
 
 const formMessage =
     document.getElementById("formMessage");
+
+
+/* =========================================
+   INPUT ELEMENTS
+========================================= */
 
 const nameInput =
     document.getElementById("name");
@@ -74,22 +70,42 @@ const messageError =
 
 
 /* =========================================
+   CHECK FORM ELEMENTS
+========================================= */
+
+if (!contactForm) {
+
+    console.error("Contact form not found!");
+
+}
+
+
+/* =========================================
    CLEAR ERRORS
 ========================================= */
 
 function clearErrors() {
 
-    nameError.textContent = "";
+    if (nameError) {
+        nameError.textContent = "";
+    }
 
-    emailError.textContent = "";
+    if (emailError) {
+        emailError.textContent = "";
+    }
 
-    subjectError.textContent = "";
+    if (subjectError) {
+        subjectError.textContent = "";
+    }
 
-    messageError.textContent = "";
+    if (messageError) {
+        messageError.textContent = "";
+    }
 
-    formMessage.textContent = "";
-
-    formMessage.className = "form-message";
+    if (formMessage) {
+        formMessage.textContent = "";
+        formMessage.className = "form-message";
+    }
 
 }
 
@@ -105,7 +121,9 @@ function validateForm() {
     let valid = true;
 
 
-    /* NAME */
+    /* -----------------------------------------
+       NAME
+    ----------------------------------------- */
 
     if (nameInput.value.trim() === "") {
 
@@ -117,7 +135,9 @@ function validateForm() {
     }
 
 
-    /* EMAIL */
+    /* -----------------------------------------
+       EMAIL
+    ----------------------------------------- */
 
     const emailPattern =
         /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -132,7 +152,11 @@ function validateForm() {
 
     }
 
-    else if (!emailPattern.test(emailInput.value.trim())) {
+    else if (
+        !emailPattern.test(
+            emailInput.value.trim()
+        )
+    ) {
 
         emailError.textContent =
             "Please enter a valid email.";
@@ -142,7 +166,9 @@ function validateForm() {
     }
 
 
-    /* SUBJECT */
+    /* -----------------------------------------
+       SUBJECT
+    ----------------------------------------- */
 
     if (subjectInput.value.trim() === "") {
 
@@ -154,7 +180,9 @@ function validateForm() {
     }
 
 
-    /* MESSAGE */
+    /* -----------------------------------------
+       MESSAGE
+    ----------------------------------------- */
 
     if (messageInput.value.trim() === "") {
 
@@ -165,7 +193,9 @@ function validateForm() {
 
     }
 
-    else if (messageInput.value.trim().length < 10) {
+    else if (
+        messageInput.value.trim().length < 10
+    ) {
 
         messageError.textContent =
             "Message should contain at least 10 characters.";
@@ -184,114 +214,138 @@ function validateForm() {
    SEND EMAIL
 ========================================= */
 
-contactForm.addEventListener("submit", function(event) {
+if (contactForm) {
 
-    event.preventDefault();
+    contactForm.addEventListener(
+        "submit",
+        function (event) {
 
-
-    /* VALIDATE */
-
-    if (!validateForm()) {
-
-        return;
-
-    }
+            event.preventDefault();
 
 
-    /* LOADING */
+            /* -----------------------------------------
+               VALIDATE
+            ----------------------------------------- */
 
-    sendButton.disabled = true;
+            if (!validateForm()) {
 
-    buttonText.textContent = "Sending...";
+                return;
 
-    formMessage.textContent = "";
-
-
-    /*
-        sendForm automatically takes the
-        name, email, subject and message
-        fields from the form.
-    */
-
-    emailjs.sendForm(
-        SERVICE_ID,
-        TEMPLATE_ID,
-        contactForm
-    )
+            }
 
 
-    /* =====================================
-       SUCCESS
-    ===================================== */
+            /* -----------------------------------------
+               LOADING STATE
+            ----------------------------------------- */
 
-    .then(function(response) {
+            sendButton.disabled = true;
 
-        console.log(
-            "Email sent successfully:",
-            response.status,
-            response.text
-        );
+            buttonText.textContent = "Sending...";
 
+            formMessage.textContent = "";
 
-        formMessage.textContent =
-            "Message sent successfully! Thank you.";
-
-        formMessage.className =
-            "form-message success";
+            formMessage.className =
+                "form-message";
 
 
-        buttonText.textContent =
-            "Message Sent ✓";
+            /* -----------------------------------------
+               SEND EMAIL USING EMAILJS
+            ----------------------------------------- */
+
+            emailjs.sendForm(
+                SERVICE_ID,
+                TEMPLATE_ID,
+                contactForm
+            )
 
 
-        contactForm.reset();
+            /* =====================================
+               SUCCESS
+            ===================================== */
+
+            .then(function (response) {
+
+                console.log(
+                    "Email sent successfully:",
+                    response.status,
+                    response.text
+                );
 
 
-        /* Reset button after 3 seconds */
+                formMessage.textContent =
+                    "Message sent successfully! Thank you.";
 
-        setTimeout(function() {
-
-            buttonText.textContent =
-                "Send Message";
-
-        }, 3000);
-
-    })
+                formMessage.className =
+                    "form-message success";
 
 
-    /* =====================================
-       ERROR
-    ===================================== */
-
-    .catch(function(error) {
-
-        console.error(
-            "EmailJS Error:",
-            error
-        );
+                buttonText.textContent =
+                    "Message Sent ✓";
 
 
-        formMessage.textContent =
-            "Message could not be sent. Please try again.";
+                /* Reset form */
 
-        formMessage.className =
-            "form-message error";
+                contactForm.reset();
 
 
-        buttonText.textContent =
-            "Send Message";
+                /* Reset button text after 3 seconds */
 
-    })
+                setTimeout(function () {
+
+                    buttonText.textContent =
+                        "Send Message";
+
+                }, 3000);
+
+            })
 
 
-    /* =====================================
-       FINALLY
-    ===================================== */
+            /* =====================================
+               ERROR
+            ===================================== */
 
-    .finally(function() {
+            .catch(function (error) {
 
-        sendButton.disabled = false;
+                console.error(
+                    "EmailJS Error:",
+                    error
+                );
 
-    });
+                console.error(
+                    "Status:",
+                    error.status
+                );
 
-});
+                console.error(
+                    "Text:",
+                    error.text
+                );
+
+
+                formMessage.textContent =
+                    "Message could not be sent. Please try again.";
+
+                formMessage.className =
+                    "form-message error";
+
+
+                buttonText.textContent =
+                    "Send Message";
+
+            })
+
+
+            /* =====================================
+               FINALLY
+            ===================================== */
+
+            .finally(function () {
+
+                sendButton.disabled = false;
+
+            });
+
+        }
+    );
+
+}
